@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Navbar from '@/components/Navbar'
 import Image from 'next/image'
-import * as S from './styles'
+import * as S from '../../components/pages/apod/styles'
 import { useEffect, useState } from 'react'
 import { PictureData } from '@/types/api/apod'
 import axios from 'axios'

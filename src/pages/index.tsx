@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Navbar from '@/components/Navbar'
 import Card from '@/components/Card'
 import projects from '@/assets/data/projects'
-import * as S from './styles'
+import * as S from '../components/pages/styles'
 
 export default function Home() {
   return (
