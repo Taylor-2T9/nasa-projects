@@ -5,9 +5,10 @@ import * as S from './styles'
 import { useEffect, useState } from 'react'
 import { PictureData } from '@/types/api/apod'
 import axios from 'axios'
+import MediaRenderer from '@/components/pages/apod/MediaRenderer'
 
 export default function Home() {
-    const [picture, setPicture] = useState<PictureData>()
+    const [picture, setPicture] = useState<PictureData>({} as PictureData)
     useEffect(() => {
         axios.get("/api/apod").then(res => {
             setPicture(() => {
@@ -23,23 +24,22 @@ export default function Home() {
                 <title>Astro Picture of the Day</title>
             </Head>
             <S.Container>
-                <Navbar />
-                {picture ?
+                <Navbar setPicture={setPicture} />
+                {picture.url ?
                     <>
                         <S.InfoArea>
                             <h2>{picture.title}</h2>
-                            <p>{picture.explanation}</p>
+                            <S.Description>{picture.explanation}</S.Description>
                             <p>{picture.date.toLocaleDateString()}</p>
                         </S.InfoArea>
                         <S.PictureArea>
-                            <Image 
-                            src={picture.url}
-                            alt={picture.title}
-                            width={470}
-                            height={470}
-                            priority
+                            <MediaRenderer
+                                url={picture.url}
+                                title={picture.title}
+                                media_type={picture.media_type}
                             />
                         </S.PictureArea>
+                        <S.MobileDescription>{picture.explanation}</S.MobileDescription>
                     </>
                     : ''
                 }

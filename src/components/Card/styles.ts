@@ -25,5 +25,4 @@ h3{
     margin-bottom: 0;
 }
 box-shadow: 0px 4px 12px 0px #868687;
-
 `
