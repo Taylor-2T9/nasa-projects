@@ -8,6 +8,5 @@ export default async function handler(
 ) {
   const resp = await axios.get(`https://api.nasa.gov/planetary/apod?api_key=${process.env.API_KEY}`)
   const data: PictureData = resp.data
-  data.date = new Date(data.date)
   res.status(200).json(data)
 }

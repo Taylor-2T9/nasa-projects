@@ -11,7 +11,7 @@ const Navbar: NextPage<NavProps> = ({ setPicture }) => {
     function submitHandler(ev: any) {
         ev.preventDefault()
         axios.get(`api/apod/${dateRef.current?.value}`).then(res => {
-            res.data.date = new Date(res.data.date)
+            res.data.date = new Date(res.data.date + " ")
             setPicture?.(res.data)
         })
     }
