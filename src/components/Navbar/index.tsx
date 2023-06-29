@@ -35,7 +35,19 @@ const Navbar: NextPage<NavProps> = ({ setPicture }) => {
                                 </S.DateForm>
                             </S.Option>
                         </S.List> :
-                        <></>
+                        router.route == "/mars" ?
+                            <S.List>
+                                <S.Option>
+                                    <h3>Curiosity</h3>
+                                </S.Option>
+                                <S.Option>
+                                    <h3>Perseverance</h3>
+                                </S.Option>
+                                <S.Option>
+                                    <h3>Explorer</h3>
+                                </S.Option>
+                            </S.List> :
+                            <></>
                 }
             </S.Nav>
         </S.Container>

@@ -1,6 +1,9 @@
 import styled from "styled-components"
 
-export const CardArea = styled.div`
+interface CardProps {
+    type: "project" | "rover"
+}
+export const CardArea = styled.div<CardProps>`
 cursor: pointer;
 display: flex;
 flex-direction: column;

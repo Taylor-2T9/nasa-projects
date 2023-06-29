@@ -4,11 +4,13 @@ import { NextPage } from "next"
 import Image from 'next/image'
 
 interface Props {
+    type: "project" | "rover"
     index: number
     item: any
 }
 
 const Card: NextPage<Props> = ({
+    type,
     index,
     item
 }) => {
@@ -18,6 +20,7 @@ const Card: NextPage<Props> = ({
             onClick={() => {
                 location.href = "/apod"
             }}
+            type={type}
         >
             <h3>{item.name}</h3>
             <p>{item.subtitle}</p>

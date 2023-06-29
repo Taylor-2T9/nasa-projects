@@ -7,7 +7,7 @@ import { PictureData } from '@/types/api/apod'
 import axios from 'axios'
 import MediaRenderer from '@/components/pages/apod/MediaRenderer'
 
-export default function Home() {
+export default function Apod() {
     const [picture, setPicture] = useState<PictureData>({} as PictureData)
     useEffect(() => {
         axios.get("/api/apod").then(res => {
