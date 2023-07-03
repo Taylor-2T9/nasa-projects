@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar"
 import * as S from "@/components/pages/404-styles"
-export default function Custom404() {
+export default function Error404() {
     return (
         <S.Container>
             <Navbar />
