@@ -18,6 +18,8 @@ align-items: center;
 }
 `
 export const TitleArea = styled.div`
+cursor: pointer;
+user-select: none;
 display: flex;
 align-items: center;
 svg{
