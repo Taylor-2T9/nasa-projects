@@ -1,10 +1,9 @@
 import { useRouter } from "next/router"
 import * as S from "./styles"
-import { MutableRefObject, useEffect, useRef, useState } from "react"
+import {  useRef } from "react"
 import { NextPage } from "next"
 import { NavProps } from "@/types/components/navbar"
 import axios from "axios"
-import { PictureData } from "@/types/api/apod"
 
 const Navbar: NextPage<NavProps> = ({ setPicture }) => {
     const router = useRouter()

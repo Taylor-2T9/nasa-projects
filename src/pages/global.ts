@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import hub_deepfield from "@/assets/hub_deepfield.jpg"
+import hub_deepfield from "@/assets/images/hub_deepfield.jpg"
 
 export default createGlobalStyle`
 body{

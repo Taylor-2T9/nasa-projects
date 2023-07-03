@@ -1,9 +1,9 @@
 import Card from "@/components/Card";
 import Navbar from "@/components/Navbar";
-import curiosity from "@/assets/curiosity.jpg"
-import opportunity from "@/assets/opportunity.jpg"
-import perseverance from "@/assets/perseverance.jpg"
-import spirit from "@/assets/spirit.jpg"
+import curiosity from "@/assets/images/curiosity.jpg"
+import opportunity from "@/assets/images/opportunity.jpg"
+import perseverance from "@/assets/images/perseverance.jpg"
+import spirit from "@/assets/images/spirit.jpg"
 import * as S from "@/components/pages/mars/styles"
 
 export default function Mars() {

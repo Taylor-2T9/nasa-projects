@@ -1,8 +1,8 @@
-import apod from "../apod.jpg"
-import earth from "../earth.png"
-import exoplanets from "../exoplanets.jpg"
-import genelab from "../genelab.png"
-import mars_rovers from "../mars_rovers.jpg"
+import apod from "../images/apod.jpg"
+import earth from "../images/earth.png"
+import exoplanets from "../images/exoplanets.jpg"
+import genelab from "../images/genelab.png"
+import mars_rovers from "../images/mars_rovers.jpg"
 
 const projects = [
     {

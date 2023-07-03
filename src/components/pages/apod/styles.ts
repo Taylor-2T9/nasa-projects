@@ -58,13 +58,13 @@ text-align: center;
 export const PictureArea = styled.div`
 margin-left: auto;
 margin-right: auto;
-margin-top: 7.5%;
+margin-top: 8.5%;
 display: flex;
 color: white;
 justify-content: center;
 align-items: center;
 width: 50%;
-max-height: 87vh;
+max-height: 80vh;
 image-rendering: optimizeQuality;
 @media (max-width: 1115px) {
     margin-top: 7%;
@@ -76,6 +76,10 @@ img{
     align-self: center;
     width: 90%;
     @media (max-width: 900px) {
+        height: 300px;
+        width: 300px;
+    }
+    @media (max-width: 780px) {
         height: 300px;
         width: 250px;
     }
