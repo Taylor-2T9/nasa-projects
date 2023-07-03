@@ -11,10 +11,10 @@ export default function Mars() {
         <div>
             <Navbar />
             <S.Container>
-                <Card type="rover" index={0} item={{ name: "Curiosity", logo: curiosity }} />
-                <Card type="rover" index={1} item={{ name: "Opportunity", logo: opportunity }} />
-                <Card type="rover" index={2} item={{ name: "Perseverance", logo: perseverance }} />
-                <Card type="rover" index={3} item={{ name: "Spirit", logo: spirit }} />
+                <Card type="rover" item={{ name: "Curiosity", logo: curiosity }} />
+                <Card type="rover" item={{ name: "Opportunity", logo: opportunity }} />
+                <Card type="rover" item={{ name: "Perseverance", logo: perseverance }} />
+                <Card type="rover" item={{ name: "Spirit", logo: spirit }} />
             </S.Container>
         </div>
     )

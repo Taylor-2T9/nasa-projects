@@ -14,7 +14,7 @@ export default function Home() {
         <Navbar />
         <S.Explorer>
           {projects.map((item, index) => (
-            <Card item={item} index={index} />
+            <Card type="project" item={item} key={index} />
           ))}
         </S.Explorer>
       </S.Container>

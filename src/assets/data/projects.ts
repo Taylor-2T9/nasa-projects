@@ -9,31 +9,36 @@ const projects = [
         name: "NASA APOD",
         subtitle: "Astronomic Picture of the Day",
         base_url: "https://api.nasa.gov/planetary/apod",
+        route: "/apod",
         logo: apod.src
+    },
+    {
+        name: "NASA Mars Rovers",
+        subtitle: "Images from NASA Rovers in Mars",
+        base_url: "https://api.nasa.gov/planetary/mars",
+        route: "/mars",
+        logo: mars_rovers.src
     },
     {
         name: "NASA Earth",
         subtitle: "Landsat Images from Earth",
-        base_url: "https://api.nasa.gov/planetary/apod",
+        route: "/earth",
+        base_url: "https://api.nasa.gov/planetary/earth",
         logo: earth.src
     },
     {
         name: "NASA Exoplanet",
         subtitle: "Access to Exoplanet Archive",
-        base_url: "https://api.nasa.gov/planetary/apod",
+        route: "/exoplanets",
+        base_url: "https://api.nasa.gov/planetary/exoplanets",
         logo: exoplanets.src
     },
     {
         name: "NASA GeneLab",
         subtitle: "Access to GeneLab database",
-        base_url: "https://api.nasa.gov/planetary/apod",
+        route: "/genelab",
+        base_url: "https://api.nasa.gov/planetary/genelab",
         logo: genelab.src
-    },
-    {
-        name: "NASA Mars Rovers",
-        subtitle: "Images from NASA Rovers in Mars",
-        base_url: "https://api.nasa.gov/planetary/apod",
-        logo: mars_rovers.src
     }
 ]
 
