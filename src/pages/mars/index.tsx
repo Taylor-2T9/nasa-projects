@@ -10,7 +10,7 @@ export default function Mars() {
             <S.Container>
                 {
                     rovers.map((item, index) => (
-                        <Card type="rover" key={index} item={{ name: item.name, logo: item.logo }} />
+                        <Card type="rover" key={index} item={item} />
                     ))
                 }
             </S.Container>

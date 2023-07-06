@@ -8,7 +8,7 @@ import axios from 'axios'
 import MediaRenderer from '@/components/pages/apod/MediaRenderer'
 
 export default function Apod() {
-    const [picture, setPicture] = useState<PictureData>({} as PictureData)
+    const [picture, setPicture] = useState({} as PictureData)
     useEffect(() => {
         axios.get("/api/apod").then(res => {
             setPicture(() => {

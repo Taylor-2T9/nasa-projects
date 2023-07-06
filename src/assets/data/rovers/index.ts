@@ -1,7 +1,7 @@
-import curiosity from "../images/curiosity.jpg"
-import opportunity from "../images/opportunity.jpg"
-import perseverance from "../images/perseverance.jpg"
-import spirit from "../images/spirit.jpg"
+import curiosity from "@/assets/images/curiosity.jpg"
+import opportunity from "@/assets/images/opportunity.jpg"
+import perseverance from "@/assets/images/perseverance.jpg"
+import spirit from "@/assets/images/spirit.jpg"
 
 const rovers = [
     {
