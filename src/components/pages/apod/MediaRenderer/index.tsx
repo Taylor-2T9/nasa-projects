@@ -1,9 +1,9 @@
-import { MediaRenderer } from "@/types/components/pages/apod"
+import { IMediaRenderer } from "@/types/components/pages/apod"
 import * as S from "./styles"
 import { NextPage } from "next"
 import Image from 'next/image'
 
-const MediaRenderer: NextPage<MediaRenderer> = ({ media_type, url, title }) => {
+const MediaRenderer: NextPage<IMediaRenderer> = ({ media_type, url, title }) => {
     return (
         <>
             {media_type == "image" ?
@@ -14,12 +14,12 @@ const MediaRenderer: NextPage<MediaRenderer> = ({ media_type, url, title }) => {
                     height={470}
                     priority
                 /> :
-                <embed
+                <S.Video
                     src={url}
                     width={470}
                     height={470}
                 >
-                </embed>
+                </S.Video>
             }
         </>
     )

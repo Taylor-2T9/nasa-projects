@@ -1,14 +1,13 @@
 import Head from 'next/head'
 import Navbar from '@/components/Navbar'
-import Image from 'next/image'
 import * as S from '../../components/pages/apod/styles'
 import { useEffect, useState } from 'react'
-import { PictureData } from '@/types/api/apod'
+import { IPictureData } from '@/types/api/apod'
 import axios from 'axios'
 import MediaRenderer from '@/components/pages/apod/MediaRenderer'
 
 export default function Apod() {
-    const [picture, setPicture] = useState({} as PictureData)
+    const [picture, setPicture] = useState({} as IPictureData)
     useEffect(() => {
         axios.get("/api/apod").then(res => {
             setPicture(() => {

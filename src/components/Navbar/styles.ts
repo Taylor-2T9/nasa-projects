@@ -1,3 +1,4 @@
+import Link from "next/link"
 import styled from "styled-components"
 
 export const Container = styled.div`
@@ -28,6 +29,9 @@ svg{
   margin: 25px;
   margin-right: 10px;
 }
+`
+export const HomeRedirect = styled(Link)`
+display: none;
 `
 export const Title = styled.h3`
 `

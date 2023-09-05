@@ -1,4 +1,4 @@
-export interface PictureData {
+export interface IPictureData {
     date: Date
     explanation: string
     media_type: "image" | "video" | string
