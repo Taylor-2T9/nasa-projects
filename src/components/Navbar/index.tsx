@@ -8,6 +8,7 @@ import axios from "axios"
 const Navbar: NextPage<INavProps> = ({ setPicture }) => {
     const router = useRouter()
     const linkRef = useRef<HTMLAnchorElement>(null)
+    const dateRef = useRef<HTMLInputElement>(null)
 
     function apodSubmitHandler(ev: any) {
         ev.preventDefault()
@@ -16,7 +17,6 @@ const Navbar: NextPage<INavProps> = ({ setPicture }) => {
             setPicture?.(res.data)
         })
     }
-    const dateRef = useRef<HTMLInputElement>(null)
     return (
         <S.Container>
             <S.Nav>

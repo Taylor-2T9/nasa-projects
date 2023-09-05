@@ -4,11 +4,12 @@ interface IRoverCamera {
 }
 
 export interface IRoverData {
-    name: "Curiosity" | "Opportunity" | "Perseverance" | "Spirit"
-    landing_date: Date
-    launch_date: Date
-    max_sol: number
-    max_date: Date
-    total_photos: number
+    name: "Curiosity" | "Opportunity" | "Perseverance" | "Spirit" | string
     cameras: IRoverCamera[]
+    landing_date: string
+    launch_date: string
+    max_sol: number
+    max_date: string
+    status: "active" | "complete" | string
+    total_photos: number
 }
