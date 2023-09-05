@@ -52,9 +52,12 @@ export default function Mars() {
                             <p>Data de chegada: {rover.landing_date}</p>
                         </div>
                     </S.InfoArea>
-                    <S.ImageArea>
-                        <S.Image src={roverLogo} alt={rover.name} width={500} height={500} />
-                    </S.ImageArea>
+                    {rover.name ?
+                        <S.ImageArea>
+                            <S.Image src={roverLogo} alt={rover.name} width={500} height={500} />
+                        </S.ImageArea>
+                        : ''
+                    }
                 </S.RoverArea>
             </S.Container>
         </div >
