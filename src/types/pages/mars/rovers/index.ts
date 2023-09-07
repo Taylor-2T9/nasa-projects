@@ -1,3 +1,3 @@
-export interface IRoverHeaderProps{
-    backgroundUrl: string
+export interface ILinkProps{
+    active: string
 }

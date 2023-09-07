@@ -25,11 +25,11 @@ export const Options = styled.div`
 display: flex;
 justify-content: space-around;
 a{
-    position: relative;
     padding-top: 2%;
     @media (max-width: 950px) {
         padding-top: 6%;
     }
+    position: relative;
     margin: 0;
     cursor: pointer;
     &:hover{
@@ -87,25 +87,13 @@ color: whitesmoke;
     padding-top: 120px;
 }
 `
-export const RoverArea = styled.div`
+export const List = styled.div`
 display: flex;
-height: 100%;
-flex-direction: row;
-justify-content: center;
-align-items: top;
+flex-wrap: wrap;
+padding: 5%;
+margin-left: 10px;
 `
-export const InfoArea = styled.div`
-width: 50%;
-display: flex;
-flex-direction: column;
-`
-export const ImageArea = styled.div`
-width: 20vw;
-height: 40vh;
-border-radius: 3px;
-border: 2px solid whitesmoke;
-`
-export const Image = styled(_Image)`
-width: 100%;
-height: 100%;
+export const Item = styled.div`
+padding: 5%;
+border: 1px solid blue;
 `

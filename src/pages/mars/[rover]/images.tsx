@@ -1,30 +1,25 @@
 import rovers_list from "@/assets/data/rovers"
-import Navbar from "@/components/Navbar"
-import * as S from "@/components/pages/mars/rover/styles"
-import { IRoverData } from "@/types/api/mars/rover"
+import * as S from "@/components/pages/mars/rover/images/styles"
+import { IRoverCamera, IRoverData } from "@/types/api/mars/rover"
 import axios from "axios"
 import { useRouter } from "next/router"
 import { useEffect, useMemo, useRef, useState } from "react"
 
-export default function Rover() {
+export default function Mars() {
     const router = useRouter()
     const linkRef = useRef<HTMLAnchorElement>(null)
     const [rover, setRover] = useState({} as IRoverData)
-    const roverLogo = useMemo(() => {
-        if (router.query.rover)
-            return rovers_list.filter((item) => {
-                return item.name.toLowerCase() === router.query.rover
-            })[0].logo
-        return ''
-    }, [rover])
 
     useEffect(() => {
         if (router.query.rover)
             axios.get(`/api/mars/${router.query.rover}`).then(({ data }) => {
                 setRover(data.rover)
+                const cameras: string[] = data.rover.cameras.map((item: IRoverCamera) => {
+                    return item.name
+                })
+                axios.get(`/api/mars/${router.query.rover}/cameras?cams=${cameras.toString()}`)
             })
     }, [router])
-
     return (
         <div>
             <S.RoverHeader>
@@ -37,7 +32,14 @@ export default function Rover() {
                         <h3> NASA API Projects </h3>
                     </S.Home>
                     <S.Title>Curiosity</S.Title>
-                    <S.Options>
+                    <S.Options
+                        onClick={() => {
+                            console.log(router)
+                            const position = router.route.split('').lastIndexOf('/')
+                            const route = router.route.substr(position)
+                            console.log(route)
+                        }}
+                    >
                         <S.Link
                             href={`/mars/${router.query.rover}`}
                             active={router.asPath === `/mars/${router.query.rover}` ? 'true' : 'false'}
@@ -54,26 +56,16 @@ export default function Rover() {
                 </S.RoverHeaderContent>
             </S.RoverHeader>
             <S.Container>
-                <S.RoverArea>
-                    <S.InfoArea>
-                        <div>
-                            <h2>Rover: {rover.name}</h2>
-                        </div>
-                        <div>
-                            <h3>Status: {rover.status}</h3>
-                        </div>
-                        <div>
-                            <p>Launch Date: {rover.launch_date}</p>
-                            <p>Landing Date: {rover.landing_date}</p>
-                        </div>
-                    </S.InfoArea>
-                    {rover.name ?
-                        <S.ImageArea>
-                            <S.Image src={roverLogo} alt={rover.name} width={500} height={500} />
-                        </S.ImageArea>
-                        : ''
-                    }
-                </S.RoverArea>
+                <S.List>
+                    {rover.cameras?.map((item, index) => (
+                        <S.Item key={index}>
+                            <h3>Camera {index}</h3>
+                            <div>
+                                <p>{item.name}</p>
+                            </div>
+                        </S.Item>
+                    ))}
+                </S.List>
             </S.Container>
         </div >
     )
