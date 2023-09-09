@@ -74,7 +74,7 @@ display: none;
 `
 export const Container = styled.div`
 width: 100%;
-height: 80vh;
+min-height: 80vh;
 padding-top: 2%;
 background-color: #020202d9;
 color: whitesmoke;
@@ -90,7 +90,7 @@ color: whitesmoke;
 export const List = styled.div`
 display: flex;
 flex-wrap: wrap;
-padding: 5%;
+padding: 2%;
 margin-left: 10px;
 `
 export const Item = styled.div`
