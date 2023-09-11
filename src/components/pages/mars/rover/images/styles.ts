@@ -97,6 +97,6 @@ export const Item = styled.div`
 padding: 5%;
 border: 1px solid blue;
 img{
-    max-height: 250px;
+    max-height: 220px;
 }
 `
