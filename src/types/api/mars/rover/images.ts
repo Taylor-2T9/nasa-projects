@@ -11,7 +11,7 @@ interface IRoverCameraSample {
 
 export interface IRoverCamerasRequest extends NextApiRequest {
     query: {
-        rover: string
+        rover: 'curiosity' | 'opportunity' | 'perseverance' | 'spirit'
         cams: string
     }
 }

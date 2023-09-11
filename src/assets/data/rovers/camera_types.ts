@@ -1,4 +1,6 @@
-const cameraTypes = {
+import { CameraTypes } from "@/types/assets"
+
+export const cameraTypes = {
     FHAZ: {
         name: "FHAZ",
         full_name: "Front Hazard Avoidance Camera",
@@ -22,6 +24,12 @@ const cameraTypes = {
         full_name: "Mast Camera",
         default_sol: {
             curiosity: 1000 // 900 950 1100 1200
+        }
+    },
+    ENTRY: {
+        name: "ENTRY",
+        full_name: "Entry, Descent, and Landing Camera",
+        default_sol: {
         }
     },
     CHEMCAM: {
@@ -72,72 +80,105 @@ const cameraTypes = {
     },
     EDL_RUCAM: {
         name: "EDL_RUCAM",
-        full_name: "Rover Up-Look Camera"
+        full_name: "Rover Up-Look Camera",
+        default_sol: {}
     },
     EDL_DDCAM: {
         name: "EDL_DDCAM",
-        full_name: "Descent Stage Down-Look Camera"
+        full_name: "Descent Stage Down-Look Camera",
+        default_sol: {}
     },
     EDL_PUCAM1: {
         name: "EDL_PUCAM1",
-        full_name: "Parachute Up-Look Camera A"
+        full_name: "Parachute Up-Look Camera A",
+        default_sol: {}
     },
     EDL_PUCAM2: {
         name: "EDL_PUCAM2",
-        full_name: "Parachute Up-Look Camera B"
+        full_name: "Parachute Up-Look Camera B",
+        default_sol: {}
     },
     NAVCAM_LEFT: {
         name: "NAVCAM_LEFT",
-        full_name: "Navigation Camera - Left"
+        full_name: "Navigation Camera - Left",
+        default_sol: {
+            perseverance: 650 // 600 700 800 820 850 900
+        }
     },
     NAVCAM_RIGHT: {
         name: "NAVCAM_RIGHT",
-        full_name: "Navigation Camera - Right"
-    },
-    MCZ_RIGHT: {
-        name: "MCZ_RIGHT",
-        full_name: "Mast Camera Zoom - Right"
+        full_name: "Navigation Camera - Right",
+        default_sol: {
+            perseverance: 650 // 600 700 800 820 850 900
+        }
     },
     MCZ_LEFT: {
         name: "MCZ_LEFT",
-        full_name: "Mast Camera Zoom - Left"
+        full_name: "Mast Camera Zoom - Left",
+        default_sol: {
+            perseverance: 550 // 600 650 700 750 800 820 850 900
+        }
+    },
+    MCZ_RIGHT: {
+        name: "MCZ_RIGHT",
+        full_name: "Mast Camera Zoom - Right",
+        default_sol: {
+            perseverance: 550 // 600 650 700 750 800 820 850 900
+        }
     },
     FRONT_HAZCAM_LEFT_A: {
         name: "FRONT_HAZCAM_LEFT_A",
-        full_name: "Front Hazard Avoidance Camera - Left"
+        full_name: "Front Hazard Avoidance Camera - Left",
+        default_sol: {
+            perseverance: 850 // 600 650 700 750
+        }
     },
     FRONT_HAZCAM_RIGHT_A: {
         name: "FRONT_HAZCAM_RIGHT_A",
-        full_name: "Front Hazard Avoidance Camera - Right"
+        full_name: "Front Hazard Avoidance Camera - Right",
+        default_sol: {
+            perseverance: 700 // 600 650 700 750 850 909
+        }
     },
     REAR_HAZCAM_LEFT: {
         name: "REAR_HAZCAM_LEFT",
-        full_name: "Rear Hazard Avoidance Camera - Left"
+        full_name: "Rear Hazard Avoidance Camera - Left",
+        default_sol: {
+            perseverance: 700 // 909
+        }
     },
     REAR_HAZCAM_RIGHT: {
         name: "REAR_HAZCAM_RIGHT",
-        full_name: "Rear Hazard Avoidance Camera - Right"
+        full_name: "Rear Hazard Avoidance Camera - Right",
+        default_sol: {
+            perseverance: 700 // 909
+        }
     },
     EDL_RDCAM: {
         name: "EDL_RDCAM",
-        full_name: "Rover Down-Look Camera"
+        full_name: "Rover Down-Look Camera",
+        default_sol: {}
     },
     SKYCAM: {
         name: "SKYCAM",
-        full_name: "MEDA Skycam"
+        full_name: "MEDA Skycam",
+        default_sol: {}
     },
     SHERLOC_WATSON: {
         name: "SHERLOC_WATSON",
-        full_name: "SHERLOC WATSON Camera"
+        full_name: "SHERLOC WATSON Camera",
+        default_sol: {}
     },
     SUPERCAM_RMI: {
         name: "SUPERCAM_RMI",
-        full_name: "SuperCam Remote Micro Imager"
+        full_name: "SuperCam Remote Micro Imager",
+        default_sol: {}
     },
     LCAM: {
         name: "LCAM",
-        full_name: "Lander Vision System Camera"
+        full_name: "Lander Vision System Camera",
+        default_sol: {}
     }
-}
+} as CameraTypes
 
 export default cameraTypes
