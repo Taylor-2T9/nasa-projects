@@ -9,6 +9,7 @@ export default function Mars() {
     const router = useRouter()
     const linkRef = useRef<HTMLAnchorElement>(null)
     const [rover, setRover] = useState({} as IRoverData)
+    const [cameras, setCameras] = useState([] as IRoverCamera[])
 
     useEffect(() => {
         if (router.query.rover)
@@ -17,7 +18,10 @@ export default function Mars() {
                 const cameras: string[] = data.rover.cameras.map((item: IRoverCamera) => {
                     return item.name
                 })
-                axios.get(`/api/mars/${router.query.rover}/cameras?cams=${cameras.toString()}`)
+                axios.get(`/api/mars/${router.query.rover}/cameras?cams=${cameras.toString()}`).then(({ data }) => {
+                    setCameras(data)
+                    console.log(data)
+                })
             })
     }, [router])
     return (
@@ -57,14 +61,19 @@ export default function Mars() {
             </S.RoverHeader>
             <S.Container>
                 <S.List>
-                    {rover.cameras?.map((item, index) => (
-                        <S.Item key={index}>
-                            <h3>Camera {index}</h3>
-                            <div>
-                                <p>{item.name}</p>
-                            </div>
-                        </S.Item>
-                    ))}
+                    {cameras?.map((item, index) => {
+                        if (item.src)
+                            return (
+                                <S.Item key={index} >
+                                    <h3>Camera {index}</h3>
+                                    <div>
+                                        <p>{item.name}</p>
+                                        <img src={item.src} />
+                                    </div>
+                                </S.Item>
+                            )
+                    }
+                    )}
                 </S.List>
             </S.Container>
         </div >

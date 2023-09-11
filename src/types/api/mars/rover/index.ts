@@ -1,6 +1,9 @@
 export interface IRoverCamera {
     name: string
     full_name: string
+    src?: string,
+    earth_date?: string,
+    rover_name?: string
 }
 
 export interface IRoverData {

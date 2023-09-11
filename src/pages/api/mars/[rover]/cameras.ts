@@ -20,8 +20,8 @@ export default async function handler(
             const samples = values.map(({ data }) => {
                 const photo = data.photos[0]
                 return {
-                    camera_name: photo?.camera.name,
-                    camera_full_name: photo?.camera.full_name,
+                    name: photo?.camera.name,
+                    full_name: photo?.camera.full_name,
                     src: photo?.img_src,
                     earth_date: photo?.earth_date,
                     rover_name: photo?.rover.name
