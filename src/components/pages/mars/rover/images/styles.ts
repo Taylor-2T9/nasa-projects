@@ -91,12 +91,25 @@ export const List = styled.div`
 display: flex;
 flex-wrap: wrap;
 padding: 2%;
-margin-left: 10px;
+justify-content: center;
 `
 export const Item = styled.div`
-padding: 5%;
-border: 1px solid blue;
-img{
+cursor: pointer;
+color: black;
+margin: 2%;
+padding: 3%;
+border-radius: 10px;
+background-color: #e1e1e1;
+box-shadow: 3px 2px 22px 3px rgba(43,43,43,1);
+transition: transform 0.2s, box-shadow 0.2s;
+&:hover{
+    background-color: #eaeaea;
+    transform: translateY(-5px);
+}
+img {
+    height: 200px;
+    width: 250px;
     max-height: 220px;
+    border: 1px solid #282828;
 }
 `

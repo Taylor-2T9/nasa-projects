@@ -54,7 +54,7 @@ export default function Mars() {
                             href={`/mars/${router.query.rover}/images`}
                             active={router.asPath === `/mars/${router.query.rover}/images` ? 'true' : 'false'}
                         >
-                            <h3>Photos</h3>
+                            <h3>Images</h3>
                         </S.Link>
                     </S.Options>
                 </S.RoverHeaderContent>
@@ -65,7 +65,7 @@ export default function Mars() {
                         if (item.src)
                             return (
                                 <S.Item key={index} >
-                                    <h3>Camera {index}</h3>
+                                    <h3>Camera {index + 1}</h3>
                                     <div>
                                         <p>{item.name}</p>
                                         <img src={item.src} />

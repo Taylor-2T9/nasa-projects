@@ -48,7 +48,7 @@ export default function Rover() {
                             href={`/mars/${router.query.rover}/images`}
                             active={router.asPath === `/mars/${router.query.rover}/images` ? 'true' : 'false'}
                         >
-                            <h3>Photos</h3>
+                            <h3>Images</h3>
                         </S.Link>
                     </S.Options>
                 </S.RoverHeaderContent>

@@ -84,24 +84,26 @@ color: whitesmoke;
 @media (max-width: 900px) {
     flex-wrap: nowrap;
     flex-direction: column;
-    padding-top: 120px;
+    padding-top: 60px;
 }
 `
 export const RoverArea = styled.div`
 display: flex;
 height: 100%;
 flex-direction: row;
+flex-wrap: wrap;
 justify-content: center;
-align-items: top;
+align-content: flex-start;
 `
 export const InfoArea = styled.div`
 width: 50%;
 display: flex;
 flex-direction: column;
+margin: 25px;
 `
 export const ImageArea = styled.div`
-width: 20vw;
-height: 40vh;
+width: 260px;
+height: 260px;
 border-radius: 3px;
 border: 2px solid whitesmoke;
 `
