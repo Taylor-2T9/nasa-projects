@@ -68,7 +68,7 @@ export default function Mars() {
                                     <img src={item.src} />
                                     <S.ItemInfo>
                                         <h3>Camera {index + 1}</h3>
-                                        <p>{item.full_name}</p>
+                                        <p>{item.camera_full_name}</p>
                                         <h5>See more images</h5>
                                     </S.ItemInfo>
                                 </S.Item>
