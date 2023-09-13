@@ -19,7 +19,6 @@ export default function Mars() {
                 })
                 axios.get(`/api/mars/${router.query.rover}/cameras?cams=${cameras.toString()}`).then(({ data }) => {
                     setCameras(data)
-                    console.log(data)
                 })
             })
     }, [router])

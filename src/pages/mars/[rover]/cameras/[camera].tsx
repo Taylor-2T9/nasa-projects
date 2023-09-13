@@ -1,15 +1,16 @@
-import * as S from "@/components/pages/mars/rover/cameras/styles"
+import * as S from "@/components/pages/mars/rover/cameras/camera/styles"
 import { IRoverData } from "@/types/api/mars/rover"
 import { IRoverCameraSample } from "@/types/api/mars/rover/cameras/camera"
 import axios from "axios"
 import { useRouter } from "next/router"
-import { useEffect, useMemo, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export default function Mars() {
     const router = useRouter()
     const linkRef = useRef<HTMLAnchorElement>(null)
     const [rover, setRover] = useState({} as IRoverData)
     const [camImages, setCamImages] = useState([] as IRoverCameraSample[])
+    const imagesLinksRefs = useRef<Array<HTMLAnchorElement>>([])
 
     useEffect(() => {
         if (router.query.rover)
@@ -52,10 +53,18 @@ export default function Mars() {
             <S.Container>
                 <S.List>
                     {camImages?.map((item, index) => {
-                        console.log(item)
+                        imagesLinksRefs.current[index]
                         if (item.src)
                             return (
-                                <S.Item key={index} >
+                                <S.Item
+                                    key={index}
+                                    onClick={() => imagesLinksRefs.current[index].click()}
+                                >
+                                    <a
+                                        href={item.src}
+                                        target="_blank"
+                                        ref={el => imagesLinksRefs.current[index] = el as HTMLAnchorElement}
+                                    />
                                     <img src={item.src} />
                                     <S.ItemInfo>
                                         <h3>{item.sol as number + 1}º day in Mars</h3>
