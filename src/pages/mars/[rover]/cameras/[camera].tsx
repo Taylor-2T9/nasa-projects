@@ -1,30 +1,22 @@
-import rovers_list from "@/assets/data/rovers"
-import Navbar from "@/components/Navbar"
-import * as S from "@/components/pages/mars/rover/styles"
+import * as S from "@/components/pages/mars/rover/cameras/styles"
 import { IRoverData } from "@/types/api/mars/rover"
+import { IRoverCameraSample } from "@/types/api/mars/rover/cameras/camera"
 import axios from "axios"
 import { useRouter } from "next/router"
 import { useEffect, useMemo, useRef, useState } from "react"
 
-export default function Rover() {
+export default function Mars() {
     const router = useRouter()
     const linkRef = useRef<HTMLAnchorElement>(null)
     const [rover, setRover] = useState({} as IRoverData)
-    const roverLogo = useMemo(() => {
-        if (router.query.rover)
-            return rovers_list.filter((item) => {
-                return item.name.toLowerCase() === router.query.rover
-            })[0].logo
-        return ''
-    }, [rover])
+    const [camImages, setCamImages] = useState([] as IRoverCameraSample[])
 
     useEffect(() => {
         if (router.query.rover)
-            axios.get(`/api/mars/${router.query.rover}`).then(({ data }) => {
-                setRover(data.rover)
+            axios.get(`/api/mars/${router.query.rover}/cameras/${router.query.camera}`).then(({ data }) => {
+                setCamImages(data)
             })
     }, [router])
-
     return (
         <div>
             <S.RoverHeader>
@@ -46,7 +38,11 @@ export default function Rover() {
                         </S.Link>
                         <S.Link
                             href={`/mars/${router.query.rover}/cameras`}
-                            active={router.asPath === `/mars/${router.query.rover}/cameras` ? 'true' : 'false'}
+                            active={
+                                router.asPath === `/mars/${router.query.rover}/cameras` ? 'true'
+                                    : router.query.camera ? 'true'
+                                        : 'false'
+                            }
                         >
                             <h3>Cameras</h3>
                         </S.Link>
@@ -54,26 +50,23 @@ export default function Rover() {
                 </S.RoverHeaderContent>
             </S.RoverHeader>
             <S.Container>
-                <S.RoverArea>
-                    <S.InfoArea>
-                        <div>
-                            <h2>Rover: {rover.name}</h2>
-                        </div>
-                        <div>
-                            <h3>Status: {rover.status}</h3>
-                        </div>
-                        <div>
-                            <p>Launch Date: {rover.launch_date}</p>
-                            <p>Landing Date: {rover.landing_date}</p>
-                        </div>
-                    </S.InfoArea>
-                    {rover.name ?
-                        <S.ImageArea>
-                            <S.Image src={roverLogo} alt={rover.name} width={500} height={500} />
-                        </S.ImageArea>
-                        : ''
+                <S.List>
+                    {camImages?.map((item, index) => {
+                        console.log(item)
+                        if (item.src)
+                            return (
+                                <S.Item key={index} >
+                                    <img src={item.src} />
+                                    <S.ItemInfo>
+                                        <h3>{item.sol as number + 1}º day in Mars</h3>
+                                        <p>{item.earth_date}</p>
+                                        <p>{item.camera_full_name} ({item.rover_name})</p>
+                                    </S.ItemInfo>
+                                </S.Item>
+                            )
                     }
-                </S.RoverArea>
+                    )}
+                </S.List>
             </S.Container>
         </div >
     )

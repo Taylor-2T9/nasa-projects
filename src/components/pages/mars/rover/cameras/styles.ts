@@ -95,9 +95,13 @@ justify-content: center;
 `
 export const Item = styled.div`
 cursor: pointer;
-color: black;
 margin: 2%;
-padding: 3%;
+color: black;
+width: 280px;
+height: 300px;
+text-align: center;
+//padding: 3%;
+padding-bottom: 3%;
 border-radius: 10px;
 background-color: #e1e1e1;
 box-shadow: 3px 2px 22px 3px rgba(43,43,43,1);
@@ -105,11 +109,26 @@ transition: transform 0.2s, box-shadow 0.2s;
 &:hover{
     background-color: #eaeaea;
     transform: translateY(-5px);
+    h5{
+        text-decoration: underline;
+    }
 }
 img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    //border-radius: 10px;
     height: 200px;
-    width: 250px;
+    width: 280px;
     max-height: 220px;
-    border: 1px solid #282828;
+    user-select: none;
 }
+h3 {
+    margin: 0;
+    margin-top: 7px;
+}
+`
+export const ItemInfo = styled.div`
+`
+export const CameraLink = styled(_Link)`
+display: none;
 `

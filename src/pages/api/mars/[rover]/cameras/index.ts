@@ -1,5 +1,5 @@
 import cameraTypes from '@/assets/data/rovers/camera_types'
-import { IRoverCamerasRequest, IRoverCamerasResponse } from '@/types/api/mars/rover/images'
+import { IRoverCamerasRequest, IRoverCamerasResponse } from '@/types/api/mars/rover/cameras'
 import axios from 'axios'
 
 export default async function handler(
@@ -7,7 +7,6 @@ export default async function handler(
     res: IRoverCamerasResponse
 ) {
     const cameras = req.query.cams.split(',')
-
     await Promise.all(
         cameras.map(camera => {
             const camera_sol = cameraTypes[camera].default_sol[req.query.rover]
@@ -21,7 +20,7 @@ export default async function handler(
                 const photo = data.photos[0]
                 return {
                     name: photo?.camera.name,
-                    full_name: photo?.camera.full_name,
+                    camera_full_name: photo?.camera.full_name,
                     src: photo?.img_src,
                     earth_date: photo?.earth_date,
                     rover_name: photo?.rover.name
