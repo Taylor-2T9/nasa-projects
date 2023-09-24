@@ -6,7 +6,7 @@ import rovers_list from "@/assets/data/rovers"
 export default function Mars() {
     return (
         <div>
-            <Navbar />
+            <Navbar title="Mars Rovers" />
             <S.Container>
                 {
                     rovers_list.map((item, index) => (

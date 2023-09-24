@@ -18,10 +18,12 @@ const Card: NextPage<ICardProps> = ({
             onClick={() => linkRef.current?.click()}
             type={type}
         >
-            <S.CardRedirect href={redirect} ref={linkRef} />
-            <h3>{item.name}</h3>
-            <p>{item.subtitle}</p>
             <Image src={item.logo} alt=" " width={170} height={170} />
+            <S.CardInfo>
+                <S.CardRedirect href={redirect} ref={linkRef} />
+                <h3>{item.name}</h3>
+                <p>{item.subtitle}</p>
+            </S.CardInfo>
         </S.CardArea>
     )
 }

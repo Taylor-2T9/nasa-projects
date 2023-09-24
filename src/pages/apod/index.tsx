@@ -22,8 +22,8 @@ export default function Apod() {
             <Head>
                 <title>Astro Picture of the Day</title>
             </Head>
+            <Navbar title="Astro Picture of the Day" setPicture={setPicture} />
             <S.Container>
-                <Navbar setPicture={setPicture} />
                 {picture.url ?
                     <>
                         <S.InfoArea>

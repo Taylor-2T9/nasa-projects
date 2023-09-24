@@ -1,19 +1,22 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-background-color: rgb(6, 6, 6, 0.8);
+background-color: #020202d9;
 display: flex;
 flex-wrap: wrap;
-padding-top: 10px;
-@media (max-width: 1116px) {
-    padding-top: 50px;
+padding-top: 20vh;
+@media (max-width: 1120px){
+    padding-top: 22vh;
 }
-@media (max-width: 900px) {
-    flex-wrap: nowrap;
-    flex-direction: column;
-    padding-top: 120px;
+@media (max-width: 1000px){
+    padding-top: 24vh;
 }
-height: 98.5vh;
+@media (max-width: 900px){
+    padding-top: 26vh;
+}
+@media (max-width: 750px){
+    padding-top: 30vh;
+}
 `
 export const InfoArea = styled.div`
 display: flex;
@@ -26,12 +29,11 @@ margin-top: 10%;
 margin-left: 5%;
 margin-bottom: 5%;
 @media (max-width: 900px) {
-    margin-bottom: 0;
-    margin-top: 7%;
-}
-@media (max-width: 900px) {
+    margin: 0;
+    margin-top: 5%;
     max-width: 100%;
-    margin-left: 0;
+    margin-left: auto;
+    margin-right: auto;
     p{
         max-width: 100%;
         margin-left: 0%;
@@ -66,12 +68,6 @@ align-items: center;
 width: 50%;
 max-height: 80vh;
 image-rendering: optimizeQuality;
-@media (max-width: 1115px) {
-    margin-top: 7%;
-}
-@media (max-width: 900px) {
-    margin-top: 0;
-}
 img{
     align-self: center;
     width: 90%;

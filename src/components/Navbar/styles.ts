@@ -1,28 +1,73 @@
-import Link from "next/link"
 import styled from "styled-components"
+import { INavContainerProps } from "@/types/components/navbar"
+import { ILinkProps } from "@/types/pages/mars/rovers"
+import _Image from "next/image"
+import _Link from "next/link"
 
-export const Container = styled.div`
+
+export const Container = styled.div<INavContainerProps>`
+background-image: ${props => `url(${props.background_image.src})`};
+background-size: cover;
+background-position-y: 30%;
+width: 100%;
+height: 35vh;
+@media (min-height: 750px){
+    height: 30vh;
+}
 position: fixed;
-top: 0;
-background-color: #D2D1AD;
-width: 100vw;
-z-index: 2;
+z-index: 3;
 `
-export const Nav = styled.nav`
+export const HeaderContent = styled.div`
 display: flex;
-width: 100vw;
-flex-direction: row;
+flex-direction: column;
+text-align: center;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.4);
+border-radius: 5px;
+color: white;
+`
+export const Options = styled.div`
+display: flex;
 justify-content: space-around;
-align-items: center;
-@media screen and (max-width: 700px){
-  justify-content: start;
+a{
+    position: relative;
+    padding-top: 2%;
+    @media (max-width: 950px) {
+        padding-top: 4%;
+    }
+    margin: 0;
+    cursor: pointer;
+    &:hover{
+        top: 5px;
+        color: #717171;
+    }
 }
 `
-export const TitleArea = styled.div`
-cursor: pointer;
-user-select: none;
+export const Link = styled(_Link) <ILinkProps>`
+text-decoration: none;
+color: ${props => props.active === 'true' ? '#717171' : 'whitesmoke'};
+top: ${props => props.active === 'true' ? '5px' : '0'};
+`
+export const Title = styled.h1`
+text-align: center;
+margin: 0;
+padding-top: 1.7%;
+text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
+@media (min-height: 750px) {
+    padding-top: 13%;
+}
+padding-left: 2.3%;
+color: whitesmoke;
+`
+export const Home = styled.div`
 display: flex;
 align-items: center;
+height: 30px;
+margin-top: 35px;
+&:hover{
+    cursor: pointer;
+    font-weight: 500;
+}
 svg{
   width: 30px;
   height: 30px;
@@ -30,58 +75,27 @@ svg{
   margin-right: 10px;
 }
 `
-export const HomeRedirect = styled(Link)`
+export const HomeRedirect = styled(_Link)`
 display: none;
 `
-export const Title = styled.h3`
-`
-export const List = styled.ul`
-display: flex;
-flex-direction: row;
-align-items: center;
-list-style-type: none;
-color: #07368f;
-text-decoration: none;
-@media screen and (max-width: 700px){
-  justify-content: start;
-  margin-left: 3px;
-  padding: 5px;
-}
-`
-export const Option = styled.li`
-form{
-  display: flex;
-  flex-direction: column;
-}
-user-select: none;
-box-sizing: border-box;
-color: black;
-padding: 5px;
-margin: 0px 18px;
-@media screen and (max-width: 700px){
-  padding: 0px;
-  margin: 0px 10px;
-}
-float: left;
-position: relative;
-align-items: center;
-height: 100%;
-&:hover{
-    cursor: pointer;
-    font-weight: 500;
-}
-a{
-    text-decoration: none;
-    color: black;
-    &:visited {
-      color: #07368f;
-    }
-}
-`
 export const DateForm = styled.form`
+display: flex;
+flex-direction: column;
+max-width: 250px;
+margin-left: auto;
+margin-right: 7%;
+margin-top: -1%;
+
+@media (max-width: 770px){
+  margin-top: 1%;
+}
+@media (min-height: 750px){
+  margin-top: 4.1%;
+}
 `
 export const DateInput = styled.input`
-width: 200px;
+width: 16vw;
+min-width: 100px;
 appearance: none;
 outline: none;
 background-color: #fff;
@@ -93,12 +107,10 @@ transition: box-shadow 0.3s ease;
 &:hover{
   box-shadow: 0 0 8px rgba(6, 6, 6, 0.9);
 }
-@media screen and (max-width: 700px){
-  width: 100px;
-}
 `
 export const ConfirmButton = styled.button`
-width: 150px;
+width: 13vw;
+min-width: 100px;
 height: 40px;
 background-color: #6c757d;
 color: #fff;
@@ -111,8 +123,5 @@ cursor: pointer;
 transition: background-color 0.3s ease;
 &:hover {
   background-color: #343a40;
-}
-@media screen and (max-width: 700px){
-  width: 75px;
 }
 `

@@ -1,14 +1,13 @@
 import styled from "styled-components"
 
 export const Container = styled.div`
-text-align: center;
-height: 80vh;
+background-color: #020202d9;
+height: 100vh;
 `
 export const Message = styled.h1`
-padding-top: 40vh;
 text-align: center;
-width: 70%;
-margin-left: auto;
-margin-right: auto;
+padding-top: 45vh;
+width: 100%;
+margin: 0;
 color:  whitesmoke;
 `

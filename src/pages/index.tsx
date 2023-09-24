@@ -11,7 +11,7 @@ export default function Home() {
         <title>NASA Projects</title>
       </Head>
       <S.Container>
-        <Navbar />
+        <Navbar title="Choose an Project" />
         <S.Explorer>
           {projects.map((item, index) => (
             <Card type="project" item={item} key={index} />
