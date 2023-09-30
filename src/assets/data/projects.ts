@@ -1,4 +1,4 @@
-import apod from "../images/apod.jpg"
+import apod from "../images/apod_header.jpg"
 import earth from "../images/earth.png"
 import exoplanets from "../images/exoplanets.jpg"
 import genelab from "../images/genelab.png"

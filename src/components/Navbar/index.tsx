@@ -1,7 +1,7 @@
-import { useRouter } from "next/router"
-import * as S from "./styles"
-import { useMemo, useRef } from "react"
 import { NextPage } from "next"
+import { useRouter } from "next/router"
+import { useMemo, useRef } from "react"
+import * as S from "./styles"
 import { INavProps } from "@/types/components/navbar"
 import mars_header from "@/assets/images/mars_header.jpg"
 import apod_header from "@/assets/images/apod_header.jpg"
@@ -81,6 +81,17 @@ const Navbar: NextPage<INavProps> = ({ setPicture, title }) => {
                                     >
                                         <h3>Cameras</h3>
                                     </S.Link>
+                                    {router.route.includes('/cameras/') ?
+                                        <S.Dropdown>
+                                            <div>
+                                                <S.MenuIcon />
+                                            </div>
+                                            <S.DropdownContent>
+                                                <a href="#">Opção 1</a>
+                                                <a href="#">Opção 2</a>
+                                                <a href="#">Opção 3</a>
+                                            </S.DropdownContent>
+                                        </S.Dropdown> : ''}
                                 </S.Options> :
                                 <></>
                     }

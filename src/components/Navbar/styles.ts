@@ -3,6 +3,7 @@ import { INavContainerProps } from "@/types/components/navbar"
 import { ILinkProps } from "@/types/pages/mars/rovers"
 import _Image from "next/image"
 import _Link from "next/link"
+import { AiOutlineMenu } from "react-icons/ai"
 
 
 export const Container = styled.div<INavContainerProps>`
@@ -10,9 +11,9 @@ background-image: ${props => `url(${props.background_image.src})`};
 background-size: cover;
 background-position-y: 30%;
 width: 100%;
-height: 35vh;
+height: 33vh;
 @media (min-height: 750px){
-    height: 30vh;
+    height: 26vh;
 }
 position: fixed;
 z-index: 3;
@@ -29,14 +30,17 @@ color: white;
 export const Options = styled.div`
 display: flex;
 justify-content: space-around;
+margin-top: 0.5%;
+@media (max-width: 950px) {
+  margin-top: 2%;
+}
+    @media (min-height: 750px) {
+  margin-top: 4%;
+}
 a{
-    position: relative;
-    padding-top: 2%;
-    @media (max-width: 950px) {
-        padding-top: 4%;
-    }
-    margin: 0;
     cursor: pointer;
+    position: relative;
+    margin: 0;
     &:hover{
         top: 5px;
         color: #717171;
@@ -45,8 +49,32 @@ a{
 `
 export const Link = styled(_Link) <ILinkProps>`
 text-decoration: none;
+padding: 0 1%;
 color: ${props => props.active === 'true' ? '#717171' : 'whitesmoke'};
 top: ${props => props.active === 'true' ? '5px' : '0'};
+`
+export const DropdownContent = styled.div`
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  a{
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    &:hover{
+      background-color: #ddd;
+    }
+  }
+`
+export const Dropdown = styled.div`
+  &:hover > ${DropdownContent} {
+    display: block;
+  }
+`
+export const MenuIcon = styled(AiOutlineMenu)`
 `
 export const Title = styled.h1`
 text-align: center;
@@ -84,13 +112,13 @@ flex-direction: column;
 max-width: 250px;
 margin-left: auto;
 margin-right: 7%;
-margin-top: -1%;
+margin-top: -1.8%;
 
 @media (max-width: 770px){
   margin-top: 1%;
 }
 @media (min-height: 750px){
-  margin-top: 4.1%;
+  margin-top: 0.5%;
 }
 `
 export const DateInput = styled.input`
