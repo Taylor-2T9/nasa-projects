@@ -72,9 +72,15 @@ export const DropdownContent = styled.div`
 export const SolForm = styled.form`
 display: flex;
 flex-direction: column;
-margin-top: -10px;
+margin-top: -15px;
+@media (min-height: 730px){
+  margin-top: -10px;
+}
 label{
+  font-size: 13px;
+@media (min-height: 730px){
   font-size: 11px;
+}
 }
 `
 export const SolInput = styled.input`
