@@ -8,9 +8,11 @@ display: flex;
 flex-wrap: wrap;
 margin-left: auto;
 margin-right: auto;
-padding-top: 40vh;
+@media (max-height: 700px){
+    padding-top: 40vh;
+}
 @media (min-height: 900px) {
-    padding-top: 33vh;
+    padding-top: 30vh;
 }
 align-items: center;
 justify-content: center;

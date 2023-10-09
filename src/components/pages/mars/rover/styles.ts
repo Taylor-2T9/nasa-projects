@@ -16,7 +16,9 @@ color: whitesmoke;
 export const RoverArea = styled.div`
 display: flex;
 height: 100%;
-margin-top: 22vh;
+@media (max-height: 700px){
+    margin-top: 22vh;
+}
 flex-direction: row;
 flex-wrap: wrap;
 justify-content: center;
