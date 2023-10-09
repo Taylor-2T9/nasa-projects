@@ -8,10 +8,11 @@ import apod_header from "@/assets/images/apod_header.jpg"
 import axios from "axios"
 import { IPictureData } from "@/types/api/apod"
 
-const Navbar: NextPage<INavProps> = ({ setPicture, title }) => {
+const Navbar: NextPage<INavProps> = ({ setPicture, setCamImages, title, rover_max_sol }) => {
     const router = useRouter()
     const linkRef = useRef<HTMLAnchorElement>(null)
     const dateRef = useRef<HTMLInputElement>(null)
+    const solRef = useRef<HTMLInputElement>(null)
 
     const header_background = useMemo(() => {
         const path_without_bar = router.asPath.substring(1)
@@ -38,12 +39,22 @@ const Navbar: NextPage<INavProps> = ({ setPicture, title }) => {
         }['default']
     }, [])
 
-    function apodSubmitHandler(ev: any) {
+    function apodSubmit(ev: any) {
         ev.preventDefault()
         setPicture?.({} as IPictureData)
         axios.get(`api/apod/${dateRef.current?.value}`).then(res => {
             res.data.date = new Date(res.data.date + " ")
             setPicture?.(res.data)
+        })
+    }
+    function roverCamSubmit(ev: any) {
+        ev.preventDefault()
+        setCamImages?.([])
+        const { rover, camera } = router.query
+        axios.get(
+            `/api/mars/${rover}/cameras/${camera}?sol=${solRef.current?.value}`
+        ).then(res => {
+            setCamImages?.(res.data)
         })
     }
     return (
@@ -60,7 +71,7 @@ const Navbar: NextPage<INavProps> = ({ setPicture, title }) => {
                     <S.Title>{title}</S.Title>
                     {
                         router.route.includes("/apod") ?
-                            <S.DateForm onSubmit={apodSubmitHandler}>
+                            <S.DateForm onSubmit={apodSubmit}>
                                 <S.DateInput type="date" ref={dateRef} required />
                                 <S.ConfirmButton>Choose a date</S.ConfirmButton>
                             </S.DateForm>
@@ -94,6 +105,19 @@ const Navbar: NextPage<INavProps> = ({ setPicture, title }) => {
                                                 <a href="#">Opção 3</a>
                                             </S.DropdownContent>
                                         </S.Dropdown> : ''} */}
+                                    {
+                                        router.route.includes('/cameras/') ?
+                                            <S.SolForm onSubmit={roverCamSubmit}>
+                                                <S.SolInput
+                                                    type="number"
+                                                    placeholder={`Date (1 - ${rover_max_sol})`}
+                                                    min="1"
+                                                    max={rover_max_sol}
+                                                    ref={solRef}
+                                                />
+                                                <S.SolConfirm>Buscar</S.SolConfirm>
+                                            </S.SolForm> : ''
+                                    }
                                 </S.Options> :
                                 <></>
                     }

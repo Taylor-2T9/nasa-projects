@@ -27,6 +27,8 @@ export default function Mars() {
                         router.query.rover[0].toUpperCase() + router.query.rover.substring(1)
                         : ''
                 }
+                setCamImages={setCamImages}
+                rover_max_sol={camImages.length ? camImages[0].rover_max_sol : ''}
             />
             <S.Container>
                 {camImages.length ? <S.List>
@@ -45,7 +47,7 @@ export default function Mars() {
                                     />
                                     <img src={item.src} />
                                     <S.ItemInfo>
-                                        <h3>{item.sol as number + 1}º day in Mars</h3>
+                                        <h3>{item.sol as number}º day in Mars</h3>
                                         <p>{item.earth_date}</p>
                                         <p>{item.camera_full_name} ({item.rover_name})</p>
                                     </S.ItemInfo>

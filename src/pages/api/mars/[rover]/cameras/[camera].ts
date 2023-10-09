@@ -7,7 +7,8 @@ export default async function handler(
     res: IRoverCameraResponse
 ) {
     const camera = req.query.camera
-    const camera_sol = cameraTypes[camera].default_sol[req.query.rover]
+    const camera_sol = req.query.sol || cameraTypes[camera].default_sol[req.query.rover]
+
     await axios.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/${req.query.rover}/photos?api_key=${process.env.API_KEY}&camera=${camera}&sol=${camera_sol}&page=1`)
         .then(value => {
             const samples = value.data.photos.map((photo: any) => {
@@ -17,7 +18,8 @@ export default async function handler(
                     src: photo?.img_src,
                     earth_date: photo?.earth_date,
                     sol: photo?.sol,
-                    rover_name: photo?.rover.name
+                    rover_name: photo?.rover.name,
+                    rover_max_sol: photo?.rover.max_sol
                 } || {}
             })
             return res.status(200).json(samples)

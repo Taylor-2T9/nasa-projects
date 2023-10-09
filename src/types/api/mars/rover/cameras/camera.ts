@@ -8,12 +8,14 @@ export interface IRoverCameraSample {
     earth_date: string,
     rover_name: IRoverData['name'],
     sol?: number
+    rover_max_sol?: number
 }
 
 export interface IRoverCameraRequest extends NextApiRequest {
     query: {
         rover: 'curiosity' | 'opportunity' | 'perseverance' | 'spirit'
         camera: string
+        sol?: number
     }
 }
 

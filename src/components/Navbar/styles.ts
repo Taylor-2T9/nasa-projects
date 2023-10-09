@@ -69,6 +69,47 @@ export const DropdownContent = styled.div`
     }
   }
 `
+export const SolForm = styled.form`
+display: flex;
+flex-direction: column;
+margin-top: -15px;
+`
+export const SolInput = styled.input`
+width: 7.2vw;
+min-width: 98px;
+text-align: center;
+height: 10px;
+appearance: none;
+outline: none;
+background-color: #fff;
+border: 1px solid #ccc;
+border-radius: 4px;
+padding: 8px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+transition: box-shadow 0.3s ease;
+margin-top: 8px;
+margin-left: 3px;
+&:hover{
+  box-shadow: 0 0 8px rgba(6, 6, 6, 0.9);
+}
+`
+export const SolConfirm = styled.button`
+width: 6vw;
+min-width: 55px;
+height: 28px;
+background-color: #6c757d;
+color: #fff;
+border: none;
+border-radius: 4px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 7px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+&:hover {
+  background-color: #343a40;
+}
+`
 export const Dropdown = styled.div`
   &:hover > ${DropdownContent} {
     display: block;
