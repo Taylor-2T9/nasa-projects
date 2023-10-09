@@ -8,12 +8,7 @@ display: flex;
 flex-wrap: wrap;
 margin-left: auto;
 margin-right: auto;
-@media (max-height: 700px){
-    padding-top: 40vh;
-}
-@media (min-height: 900px) {
-    padding-top: 30vh;
-}
+padding-top: 35vh;
 align-items: center;
 justify-content: center;
 `

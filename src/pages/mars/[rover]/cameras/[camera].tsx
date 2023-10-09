@@ -11,13 +11,18 @@ export default function Mars() {
     const router = useRouter()
     const linkRef = useRef<HTMLAnchorElement>(null)
     const [camImages, setCamImages] = useState([] as IRoverCameraSample[])
+    const [roverInfo, setRoverInfo] = useState({} as IRoverData)
     const imagesLinksRefs = useRef<Array<HTMLAnchorElement>>([])
 
     useEffect(() => {
-        if (router.query.rover)
+        if (router.query.rover) {
             axios.get(`/api/mars/${router.query.rover}/cameras/${router.query.camera}`).then(({ data }) => {
                 setCamImages(data)
             })
+            axios.get(`/api/mars/${router.query.rover}`).then(({ data }) => {
+                setRoverInfo(data.rover)
+            })
+        }
     }, [router])
     return (
         <div>
@@ -28,7 +33,7 @@ export default function Mars() {
                         : ''
                 }
                 setCamImages={setCamImages}
-                rover_max_sol={camImages.length ? camImages[0].rover_max_sol : ''}
+                rover_max_sol={roverInfo.max_sol ? roverInfo.max_sol : ''}
             />
             <S.Container>
                 {camImages.length ? <S.List>

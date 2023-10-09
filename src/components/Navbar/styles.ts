@@ -75,8 +75,8 @@ flex-direction: column;
 margin-top: -15px;
 `
 export const SolInput = styled.input`
-width: 7.2vw;
-min-width: 98px;
+width: 7.3vw;
+min-width: 104px;
 text-align: center;
 height: 10px;
 appearance: none;
