@@ -12,7 +12,10 @@ background-size: cover;
 background-position-y: 30%;
 width: 100%;
 height: 33vh;
-@media (min-height: 750px){
+@media (min-height: 700px){
+    height: 30vh;
+}
+@media (min-height: 850px){
     height: 26vh;
 }
 position: fixed;
@@ -34,8 +37,8 @@ margin-top: 0.5%;
 @media (max-width: 950px) {
   margin-top: 2%;
 }
-    @media (min-height: 750px) {
-  margin-top: 4%;
+    @media (min-height: 700px) {
+  margin-top: 5%;
 }
 a{
     cursor: pointer;
@@ -73,12 +76,12 @@ export const SolForm = styled.form`
 display: flex;
 flex-direction: column;
 margin-top: -15px;
-@media (min-height: 730px){
+@media (min-height: 700px){
   margin-top: -10px;
 }
 label{
   font-size: 13px;
-@media (min-height: 730px){
+@media (min-height: 700px){
   font-size: 11px;
 }
 }
@@ -99,7 +102,7 @@ transition: box-shadow 0.3s ease;
 margin-top: 8px;
 margin-left: 3px;
 font-size: 12px;
-@media (min-height: 730px){
+@media (min-height: 700px){
   min-width: 78px;
 }
 &:hover{
@@ -136,8 +139,9 @@ text-align: center;
 margin: 0;
 padding-top: 1.7%;
 text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
-@media (min-height: 720px) {
+@media (min-height: 700px) {
   padding-top: 6.5%;
+  font-size: 28px;
 }
 padding-left: 2.3%;
 color: whitesmoke;
@@ -172,9 +176,6 @@ margin-top: -1.8%;
 @media (max-width: 770px){
   margin-top: 1%;
 }
-@media (min-height: 750px){
-  margin-top: 0.5%;
-}
 `
 export const DateInput = styled.input`
 width: 15vw;
@@ -187,7 +188,7 @@ border-radius: 4px;
 padding: 10px;
 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 transition: box-shadow 0.3s ease;
-@media (min-height: 750px){
+@media (min-height: 700px){
   margin-top: 5px;
   height: 15px;
 }
@@ -199,7 +200,7 @@ export const ConfirmButton = styled.button`
 width: 12vw;
 min-width: 100px;
 height: 40px;
-@media (min-height: 750px){
+@media (min-height: 700px){
   height: 35px;
 }
 background-color: #6c757d;

@@ -111,12 +111,12 @@ const Navbar: NextPage<INavProps> = ({ setPicture, setCamImages, title, rover_ma
                                                 <label>Choose a day</label>
                                                 <S.SolInput
                                                     type="number"
-                                                    placeholder={`Date (1 - ${rover_max_sol})`}
+                                                    placeholder={`1 - ${rover_max_sol}`}
                                                     min="1"
                                                     max={rover_max_sol}
                                                     ref={solRef}
                                                 />
-                                                <S.SolConfirm>Buscar</S.SolConfirm>
+                                                <S.SolConfirm>Search</S.SolConfirm>
                                             </S.SolForm> : ''
                                     }
                                 </S.Options> :
