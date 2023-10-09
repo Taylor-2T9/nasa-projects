@@ -1,4 +1,5 @@
 import rovers_list from "@/assets/data/rovers"
+import Loading from "@/components/Loading"
 import Navbar from "@/components/Navbar"
 import * as S from "@/components/pages/mars/rover/styles"
 import { IRoverData } from "@/types/api/mars/rover"
@@ -29,7 +30,7 @@ export default function Rover() {
         <div>
             <Navbar title={rover.name} />
             <S.Container>
-                <S.RoverArea>
+                {rover.name ? <S.RoverArea>
                     <S.InfoArea>
                         <div>
                             <h2>Rover: {rover.name}</h2>
@@ -42,13 +43,12 @@ export default function Rover() {
                             <p>Landing Date: {rover.landing_date}</p>
                         </div>
                     </S.InfoArea>
-                    {rover.name ?
-                        <S.ImageArea>
-                            <S.Image src={roverLogo} alt={rover.name} width={500} height={500} />
-                        </S.ImageArea>
-                        : ''
-                    }
+                    <S.ImageArea>
+                        <S.Image src={roverLogo} alt={rover.name} width={500} height={500} />
+                    </S.ImageArea>
                 </S.RoverArea>
+                    : <Loading />
+                }
             </S.Container>
         </div >
     )

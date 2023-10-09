@@ -1,3 +1,4 @@
+import Loading from "@/components/Loading"
 import Navbar from "@/components/Navbar"
 import * as S from "@/components/pages/mars/rover/cameras/camera/styles"
 import { IRoverData } from "@/types/api/mars/rover"
@@ -28,7 +29,7 @@ export default function Mars() {
                 }
             />
             <S.Container>
-                <S.List>
+                {camImages.length ? <S.List>
                     {camImages?.map((item, index) => {
                         imagesLinksRefs.current[index]
                         if (item.src)
@@ -52,7 +53,7 @@ export default function Mars() {
                             )
                     }
                     )}
-                </S.List>
+                </S.List> : <Loading />}
             </S.Container>
         </div >
     )

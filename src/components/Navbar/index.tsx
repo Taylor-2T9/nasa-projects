@@ -6,6 +6,7 @@ import { INavProps } from "@/types/components/navbar"
 import mars_header from "@/assets/images/mars_header.jpg"
 import apod_header from "@/assets/images/apod_header.jpg"
 import axios from "axios"
+import { IPictureData } from "@/types/api/apod"
 
 const Navbar: NextPage<INavProps> = ({ setPicture, title }) => {
     const router = useRouter()
@@ -39,6 +40,7 @@ const Navbar: NextPage<INavProps> = ({ setPicture, title }) => {
 
     function apodSubmitHandler(ev: any) {
         ev.preventDefault()
+        setPicture?.({} as IPictureData)
         axios.get(`api/apod/${dateRef.current?.value}`).then(res => {
             res.data.date = new Date(res.data.date + " ")
             setPicture?.(res.data)
@@ -81,7 +83,7 @@ const Navbar: NextPage<INavProps> = ({ setPicture, title }) => {
                                     >
                                         <h3>Cameras</h3>
                                     </S.Link>
-                                    {router.route.includes('/cameras/') ?
+                                    {/* {router.route.includes('/cameras/') ?
                                         <S.Dropdown>
                                             <div>
                                                 <S.MenuIcon />
@@ -91,7 +93,7 @@ const Navbar: NextPage<INavProps> = ({ setPicture, title }) => {
                                                 <a href="#">Opção 2</a>
                                                 <a href="#">Opção 3</a>
                                             </S.DropdownContent>
-                                        </S.Dropdown> : ''}
+                                        </S.Dropdown> : ''} */}
                                 </S.Options> :
                                 <></>
                     }

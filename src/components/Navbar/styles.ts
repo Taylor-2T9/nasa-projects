@@ -82,7 +82,7 @@ margin: 0;
 padding-top: 1.7%;
 text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
 @media (min-height: 750px) {
-    padding-top: 13%;
+  padding-top: 8.5%;
 }
 padding-left: 2.3%;
 color: whitesmoke;
@@ -122,7 +122,7 @@ margin-top: -1.8%;
 }
 `
 export const DateInput = styled.input`
-width: 16vw;
+width: 15vw;
 min-width: 100px;
 appearance: none;
 outline: none;
@@ -132,14 +132,21 @@ border-radius: 4px;
 padding: 10px;
 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 transition: box-shadow 0.3s ease;
+@media (min-height: 750px){
+  margin-top: 5px;
+  height: 15px;
+}
 &:hover{
   box-shadow: 0 0 8px rgba(6, 6, 6, 0.9);
 }
 `
 export const ConfirmButton = styled.button`
-width: 13vw;
+width: 12vw;
 min-width: 100px;
 height: 40px;
+@media (min-height: 750px){
+  height: 35px;
+}
 background-color: #6c757d;
 color: #fff;
 border: none;

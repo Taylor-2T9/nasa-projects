@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { IPictureData } from '@/types/api/apod'
 import axios from 'axios'
 import MediaRenderer from '@/components/pages/apod/MediaRenderer'
+import Loading from '@/components/Loading'
 
 export default function Apod() {
     const [picture, setPicture] = useState({} as IPictureData)
@@ -40,7 +41,7 @@ export default function Apod() {
                         </S.PictureArea>
                         <S.MobileDescription>{picture.explanation}</S.MobileDescription>
                     </>
-                    : ''
+                    : <Loading />
                 }
             </S.Container>
         </>

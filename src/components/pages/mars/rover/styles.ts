@@ -4,9 +4,9 @@ import styled from "styled-components"
 import _Link from "next/link"
 
 export const Container = styled.div`
-padding-top: 48vh;
+padding-top: 20vh;
 width: 100%;
-height: 80vh;
+min-height: 80vh;
 background-color: #020202d9;
 color: whitesmoke;
 @media (min-height: 750px) {
@@ -16,6 +16,7 @@ color: whitesmoke;
 export const RoverArea = styled.div`
 display: flex;
 height: 100%;
+margin-top: 22vh;
 flex-direction: row;
 flex-wrap: wrap;
 justify-content: center;

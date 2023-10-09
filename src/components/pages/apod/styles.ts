@@ -5,6 +5,7 @@ background-color: #020202d9;
 display: flex;
 flex-wrap: wrap;
 padding-top: 20vh;
+min-height: 80vh;
 @media (max-width: 1120px){
     padding-top: 22vh;
 }
@@ -25,9 +26,8 @@ justify-content: center;
 color: white;
 text-align: center;
 max-width: 45%;
-margin-top: 10%;
+margin-top: 4.5%;
 margin-left: 5%;
-margin-bottom: 5%;
 @media (max-width: 900px) {
     margin: 0;
     margin-top: 5%;
@@ -60,17 +60,17 @@ text-align: center;
 export const PictureArea = styled.div`
 margin-left: auto;
 margin-right: auto;
-margin-top: 8.5%;
+margin-top: 5%;
 display: flex;
 color: white;
 justify-content: center;
 align-items: center;
 width: 50%;
-max-height: 80vh;
 image-rendering: optimizeQuality;
 img{
     align-self: center;
     width: 90%;
+    height: 82%;
     @media (max-width: 900px) {
         height: 300px;
         width: 300px;
