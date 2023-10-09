@@ -13,7 +13,7 @@ background-position-y: 30%;
 width: 100%;
 height: 33vh;
 @media (min-height: 700px){
-    height: 30vh;
+    height: 28vh;
 }
 @media (min-height: 850px){
     height: 26vh;
@@ -37,7 +37,7 @@ margin-top: 0.5%;
 @media (max-width: 950px) {
   margin-top: 2%;
 }
-    @media (min-height: 700px) {
+@media (min-height: 700px) {
   margin-top: 5%;
 }
 a{
@@ -190,7 +190,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 transition: box-shadow 0.3s ease;
 @media (min-height: 700px){
   margin-top: 5px;
-  height: 15px;
+  height: 9px;
 }
 &:hover{
   box-shadow: 0 0 8px rgba(6, 6, 6, 0.9);
@@ -201,7 +201,7 @@ width: 12vw;
 min-width: 100px;
 height: 40px;
 @media (min-height: 700px){
-  height: 35px;
+  height: 30px;
 }
 background-color: #6c757d;
 color: #fff;

@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const Container = styled.div`
 display: flex;
 flex-wrap: wrap;
-padding-top: 28vh;
+padding-top: 30vh;
 @media (max-height: 700px){
     padding-top: 40vh;
 }
