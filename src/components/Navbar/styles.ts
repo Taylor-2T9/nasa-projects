@@ -72,7 +72,10 @@ export const DropdownContent = styled.div`
 export const SolForm = styled.form`
 display: flex;
 flex-direction: column;
-margin-top: -15px;
+margin-top: -10px;
+label{
+  font-size: 11px;
+}
 `
 export const SolInput = styled.input`
 width: 7.3vw;
@@ -89,6 +92,10 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 transition: box-shadow 0.3s ease;
 margin-top: 8px;
 margin-left: 3px;
+font-size: 12px;
+@media (min-height: 730px){
+  min-width: 78px;
+}
 &:hover{
   box-shadow: 0 0 8px rgba(6, 6, 6, 0.9);
 }
@@ -104,6 +111,7 @@ border-radius: 4px;
 margin-left: auto;
 margin-right: auto;
 margin-top: 7px;
+font-size: 13px;
 cursor: pointer;
 transition: background-color 0.3s ease;
 &:hover {
@@ -122,8 +130,8 @@ text-align: center;
 margin: 0;
 padding-top: 1.7%;
 text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
-@media (min-height: 750px) {
-  padding-top: 8.5%;
+@media (min-height: 720px) {
+  padding-top: 6.5%;
 }
 padding-left: 2.3%;
 color: whitesmoke;
@@ -132,7 +140,7 @@ export const Home = styled.div`
 display: flex;
 align-items: center;
 height: 30px;
-margin-top: 35px;
+margin-top: 27px;
 &:hover{
     cursor: pointer;
     font-weight: 500;

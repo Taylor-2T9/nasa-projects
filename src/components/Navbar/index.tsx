@@ -108,6 +108,7 @@ const Navbar: NextPage<INavProps> = ({ setPicture, setCamImages, title, rover_ma
                                     {
                                         router.route.includes('/cameras/') ?
                                             <S.SolForm onSubmit={roverCamSubmit}>
+                                                <label>Choose a day</label>
                                                 <S.SolInput
                                                     type="number"
                                                     placeholder={`Date (1 - ${rover_max_sol})`}
