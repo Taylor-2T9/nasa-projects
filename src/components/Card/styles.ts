@@ -35,7 +35,7 @@ h3 {
     margin: 0;
     text-align: center;
 }
-@media (min-height: 700px) {
+@media (min-height: 600px) and (max-width: 500px) {
     width: 60vw;
     height: 35vh;
 }

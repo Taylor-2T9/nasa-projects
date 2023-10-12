@@ -12,8 +12,8 @@ background-size: cover;
 background-position-y: 30%;
 width: 100%;
 height: 33vh;
-@media (min-height: 700px){
-    height: 28vh;
+@media (min-height: 600px) and (max-width: 500px){
+    height: 30vh;
 }
 @media (min-height: 850px){
     height: 26vh;
@@ -37,7 +37,10 @@ margin-top: 0.5%;
 @media (max-width: 950px) {
   margin-top: 2%;
 }
-@media (min-height: 700px) {
+@media (min-height: 600px) and (max-width: 500px){
+  margin-top: 0%;
+}
+@media (min-height: 750px) and (max-width: 500px) {
   margin-top: 5%;
 }
 a{
@@ -76,12 +79,12 @@ export const SolForm = styled.form`
 display: flex;
 flex-direction: column;
 margin-top: -15px;
-@media (min-height: 700px){
+@media (min-height: 600px) and (max-width: 500px){
   margin-top: -10px;
 }
 label{
   font-size: 13px;
-@media (min-height: 700px){
+@media (min-height: 600px) and (max-width: 500px){
   font-size: 11px;
 }
 }
@@ -102,7 +105,7 @@ transition: box-shadow 0.3s ease;
 margin-top: 8px;
 margin-left: 3px;
 font-size: 12px;
-@media (min-height: 700px){
+@media (min-height: 600px) and (max-width: 500px){
   min-width: 78px;
 }
 &:hover{
@@ -139,8 +142,8 @@ text-align: center;
 margin: 0;
 padding-top: 1.7%;
 text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
-@media (min-height: 700px) {
-  padding-top: 6.5%;
+@media (min-height: 600px) and (max-width: 500px) {
+  padding-top: 6%;
   font-size: 28px;
 }
 padding-left: 2.3%;
@@ -188,7 +191,7 @@ border-radius: 4px;
 padding: 10px;
 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 transition: box-shadow 0.3s ease;
-@media (min-height: 700px){
+@media (min-height: 600px) and (max-width: 500px){
   margin-top: 5px;
   height: 9px;
 }
@@ -200,7 +203,7 @@ export const ConfirmButton = styled.button`
 width: 12vw;
 min-width: 100px;
 height: 40px;
-@media (min-height: 700px){
+@media (min-height: 600px) and (max-width: 500px){
   height: 30px;
 }
 background-color: #6c757d;
