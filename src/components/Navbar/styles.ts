@@ -12,10 +12,13 @@ background-size: cover;
 background-position-y: 30%;
 width: 100%;
 height: 33vh;
-@media (min-height: 600px) and (max-width: 500px){
-    height: 30vh;
+@media (min-height: 642px) and (max-width: 500px){
+    height: 32vh;
 }
-@media (min-height: 850px){
+@media (min-height: 680px) and (max-width: 500px){
+    height: 29vh;
+}
+@media (min-height: 850px) and (max-width: 500px){
     height: 26vh;
 }
 position: fixed;
@@ -38,7 +41,7 @@ margin-top: 0.5%;
   margin-top: 2%;
 }
 @media (min-height: 600px) and (max-width: 500px){
-  margin-top: 0%;
+  margin-top: 5%;
 }
 @media (min-height: 750px) and (max-width: 500px) {
   margin-top: 5%;
