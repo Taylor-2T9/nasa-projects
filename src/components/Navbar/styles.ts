@@ -184,6 +184,8 @@ margin-top: -1.8%;
 }
 `
 export const DateInput = styled.input`
+appearance: textfield;
+-webkit-appearance: none;
 width: 15vw;
 min-width: 100px;
 appearance: none;
