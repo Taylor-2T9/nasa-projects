@@ -26,8 +26,13 @@ justify-content: center;
 color: white;
 text-align: center;
 max-width: 45%;
-margin-top: 4.5%;
 margin-left: 5%;
+@media (max-width: 1150px) {
+    margin-top: 7%;
+}
+@media (max-width: 1025px) {
+    margin-top: 5%;
+}
 @media (max-width: 900px) {
     margin: 0;
     margin-top: 5%;
@@ -60,24 +65,32 @@ text-align: center;
 export const PictureArea = styled.div`
 margin-left: auto;
 margin-right: auto;
-margin-top: 5%;
 display: flex;
 color: white;
 justify-content: center;
 align-items: center;
 width: 50%;
 image-rendering: optimizeQuality;
+@media (max-width: 1150px) {
+    margin-top: 2%;
+}
 img{
     align-self: center;
-    width: 90%;
-    height: 82%;
+    width: 80%;
+    height: 70%;
+    @media (max-width: 1100px) {
+        width: 65%;
+        height: 50%;
+    }
     @media (max-width: 900px) {
-        height: 300px;
-        width: 300px;
+        margin-top: 14%;
+        height: 285px;
+        width: 285px;
     }
     @media (max-width: 780px) {
-        height: 300px;
-        width: 250px;
+        margin-top: 5%;
+        height: 285px;
+        width: 245px;
     }
     border-radius: 5%;
 }

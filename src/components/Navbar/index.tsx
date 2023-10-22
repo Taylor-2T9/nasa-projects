@@ -68,7 +68,14 @@ const Navbar: NextPage<INavProps> = ({ setPicture, setCamImages, title, rover_ma
                         </svg>
                         <h3> NASA API Projects </h3>
                     </S.Home>
-                    <S.Title>{title}</S.Title>
+                    <S.Title
+                        variant={
+                            router.route.includes('/cameras/') ? "top"
+                                : "center"
+                        }
+                    >
+                        {title}
+                    </S.Title>
                     {
                         router.route.includes("/apod") ?
                             <S.DateForm onSubmit={apodSubmit}>

@@ -140,13 +140,13 @@ export const Dropdown = styled.div`
 `
 export const MenuIcon = styled(AiOutlineMenu)`
 `
-export const Title = styled.h1`
+export const Title = styled.h1<{ variant: 'top' | 'center' }>`
 text-align: center;
 margin: 0;
 padding-top: 1.7%;
 text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
 @media (min-height: 600px) and (max-width: 500px) {
-  padding-top: 6%;
+  padding-top: ${props => props.variant === 'top' ? '6%' : '12%'};
   font-size: 28px;
 }
 padding-left: 2.3%;
