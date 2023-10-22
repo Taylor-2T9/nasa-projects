@@ -4,7 +4,7 @@ export const Container = styled.div`
 background-color: #020202d9;
 display: flex;
 flex-wrap: wrap;
-padding-top: 20vh;
+padding-top: 20vh;  
 min-height: 80vh;
 @media (max-width: 1120px){
     padding-top: 22vh;
@@ -27,6 +27,11 @@ color: white;
 text-align: center;
 max-width: 45%;
 margin-left: 5%;
+h2 {
+    white-space: normal;
+    max-width: 98%;
+    text-align: center;
+}
 @media (max-width: 1150px) {
     margin-top: 7%;
 }
@@ -45,8 +50,12 @@ margin-left: 5%;
     }
 }
 `
+export const LocalDate = styled.p`
+    margin-top: 0;
+`
 export const Description = styled.p`
 font-size: 18px;
+margin-top: 0;
 @media (max-width: 900px){
     display: none;
 }
@@ -78,6 +87,10 @@ img{
     align-self: center;
     width: 80%;
     height: 70%;
+    @media (min-width: 1100px) {
+        width: 75%;
+        height: 63%;
+    }
     @media (max-width: 1100px) {
         width: 65%;
         height: 50%;
@@ -94,4 +107,5 @@ img{
     }
     border-radius: 5%;
 }
+
 `

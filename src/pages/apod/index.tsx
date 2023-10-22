@@ -30,7 +30,7 @@ export default function Apod() {
                         <S.InfoArea>
                             <h2>{picture.title}</h2>
                             <S.Description>{picture.explanation}</S.Description>
-                            <p>{picture.date.toLocaleDateString()}</p>
+                            <S.LocalDate>{picture.date.toLocaleDateString()}</S.LocalDate>
                         </S.InfoArea>
                         <S.PictureArea>
                             <MediaRenderer
