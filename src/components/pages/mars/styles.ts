@@ -5,7 +5,7 @@ display: flex;
 flex-wrap: wrap;
 padding-top: 30vh;
 @media (max-height: 700px){
-    padding-top: 40vh;
+    padding-top: 36vh;
 }
 align-items: center;
 justify-content: center;

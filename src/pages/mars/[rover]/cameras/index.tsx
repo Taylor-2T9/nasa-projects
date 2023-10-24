@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar"
 import * as S from "@/components/pages/mars/rover/cameras/styles"
 import { IRoverCamera } from "@/types/api/mars/rover"
 import axios from "axios"
+import Head from "next/head"
 import { useRouter } from "next/router"
 import { useEffect, useRef, useState } from "react"
 
@@ -24,7 +25,13 @@ export default function Mars() {
             })
     }, [router])
     return (
-        <div>
+        <>
+            <Head>
+                <title>NASA Mars Rovers - {
+                    router.query.rover && typeof router.query.rover === 'string' ?
+                        router.query.rover[0].toUpperCase() + router.query.rover.substring(1)
+                        : ''} Cameras</title>
+            </Head>
             <Navbar
                 title={
                     router.query.rover && typeof router.query.rover === 'string' ?
@@ -58,6 +65,6 @@ export default function Mars() {
                     )}
                 </S.List> : <Loading />}
             </S.Container>
-        </div >
+        </>
     )
 }

@@ -2,10 +2,14 @@ import Card from "@/components/Card"
 import Navbar from "@/components/Navbar"
 import * as S from "@/components/pages/mars/styles"
 import rovers_list from "@/assets/data/rovers"
+import Head from "next/head"
 
 export default function Mars() {
     return (
-        <div>
+        <>
+            <Head>
+                <title>NASA Mars Rovers</title>
+            </Head>
             <Navbar title="Mars Rovers" />
             <S.Container>
                 {
@@ -14,6 +18,6 @@ export default function Mars() {
                     ))
                 }
             </S.Container>
-        </div>
+        </>
     )
 }

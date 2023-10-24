@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar"
 import * as S from "@/components/pages/mars/rover/styles"
 import { IRoverData } from "@/types/api/mars/rover"
 import axios from "axios"
+import Head from "next/head"
 import { useRouter } from "next/router"
 import { useEffect, useMemo, useRef, useState } from "react"
 
@@ -27,7 +28,10 @@ export default function Rover() {
     }, [router])
 
     return (
-        <div>
+        <>
+            <Head>
+                <title>NASA Mars Rovers - {rover.name}</title>
+            </Head>
             <Navbar title={rover.name} />
             <S.Container>
                 {rover.name ? <S.RoverArea>
@@ -50,6 +54,6 @@ export default function Rover() {
                     : <Loading />
                 }
             </S.Container>
-        </div >
+        </>
     )
 }

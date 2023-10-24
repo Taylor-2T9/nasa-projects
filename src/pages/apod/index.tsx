@@ -35,14 +35,6 @@ export default function Apod() {
                     <>
                         <S.InfoArea>
                             <h2>{picture.title}</h2>
-                            {/*
-                            ---------------------
-                            FAZER:
-                            - Ajustar estrutura e design do botão de descrição
-                            - Fazer e ajustar estrutura e design do botão de descrição mobile
-                            - Começar a fazer a api genelab
-                            ---------------------
-                            */}
                             {
                                 picture.resumeExplanation?.length ?
                                     <>
