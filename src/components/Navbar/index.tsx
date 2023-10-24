@@ -43,8 +43,13 @@ const Navbar: NextPage<INavProps> = ({ setPicture, setCamImages, title, rover_ma
         ev.preventDefault()
         setPicture?.({} as IPictureData)
         axios.get(`api/apod/${dateRef.current?.value}`).then(res => {
-            res.data.date = new Date(res.data.date + " ")
-            setPicture?.(res.data)
+            const data = {
+                ...res.data,
+                resumeExplanation: res.data.explanation.length > 600 ?
+                    res.data.explanation.substr(0, 600) + '...' : '',
+                date: new Date(res.data.date + " ")
+            }
+            setPicture?.(data)
         })
     }
     function roverCamSubmit(ev: any) {
