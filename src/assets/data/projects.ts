@@ -1,8 +1,7 @@
 import apod from "../images/apod_header.jpg"
-import earth from "../images/earth.png"
-import exoplanets from "../images/exoplanets.jpg"
 import genelab from "../images/genelab.png"
 import mars_rovers from "../images/mars_rovers.jpg"
+import nasa_images from "../images/nasa_images.jpg"
 
 const projects = [
     {
@@ -13,25 +12,18 @@ const projects = [
         logo: apod.src
     },
     {
+        name: "NASA Image and Video Library",
+        subtitle: "Images from NASA Database",
+        base_url: "https://images.nasa.gov/",
+        route: "/images",
+        logo: nasa_images.src
+    },
+    {
         name: "NASA Mars Rovers",
         subtitle: "Images from NASA Rovers in Mars",
         base_url: "https://api.nasa.gov/planetary/mars",
         route: "/mars",
         logo: mars_rovers.src
-    },
-    {
-        name: "NASA Earth",
-        subtitle: "Landsat Images from Earth",
-        route: "/earth",
-        base_url: "https://api.nasa.gov/planetary/earth",
-        logo: earth.src
-    },
-    {
-        name: "NASA Exoplanet",
-        subtitle: "Access to Exoplanet Archive",
-        route: "/exoplanets",
-        base_url: "https://api.nasa.gov/planetary/exoplanets",
-        logo: exoplanets.src
     },
     {
         name: "NASA GeneLab",
