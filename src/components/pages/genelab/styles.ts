@@ -27,7 +27,7 @@ padding-top: 20vh;
 }
 `
 export const TableWrapper = styled.div`
-margin-top: 5.2%;
+margin-top: 5.4%;
 width: 99.5%;
 margin-left: auto;
 margin-right: auto;
@@ -48,8 +48,16 @@ table {
 thead{
     position: sticky;
     top: 0px;
+    @media (min-height: 600px) and (max-width: 500px){
+        top: -5px;
+    }
     background-color: #4a4947;
     color: #dedddc;
+}
+th{
+    @media (min-height: 600px) and (max-width: 500px){
+        height: 37px;
+    }
 }
 td, th{
     padding: 1.1vw;
@@ -58,7 +66,7 @@ td, th{
 
 tbody{
     tr{
-            background-color: #e7e5e5;
+        background-color: #e7e5e5;
         &:nth-child(even){
             background-color: #f2f2f2;
         }
@@ -77,4 +85,12 @@ color: #b9b9b9;
 }
 `
 export const Row = styled.tr`
+&[data-variant="observer"] {
+        height: 40px;
+        td{
+            color: whitesmoke;
+            text-align: center;
+            white-space: nowrap;
+        }
+}
 `

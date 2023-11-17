@@ -31,7 +31,7 @@ export default function Genelab() {
         })
     }, [ascendent, content, filter])
 
-    const loadMoreRef = useRef<HTMLDivElement>(null)
+    const loadMoreRef = useRef<HTMLTableRowElement>(null)
 
     useEffect(() => {
         const observer = new IntersectionObserver((entities) => {
@@ -156,11 +156,13 @@ export default function Genelab() {
                                 ))}
                             </tbody>
                             <tfoot>
+                                <S.Row data-variant="observer" ref={loadMoreRef}>
+                                    <td>
+                                        Loading more...
+                                    </td>
+                                </S.Row>
                             </tfoot>
                         </table>
-                        <p ref={loadMoreRef}>
-                            Loading more...
-                        </p>
                     </> : <Loading />}
                 </S.TableWrapper>
                 {/* <Loading /> */}
