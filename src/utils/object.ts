@@ -1,8 +1,9 @@
 export function convertObjectToArray(obj) {
-    const list: any[] = []
+    let list: any[] = []
+    let labels_list: string[] = []
     for (const label in obj) {
-        list.push(obj[label])
-        console.log(label)
+        list = [...list, obj[label]]
+        labels_list = [...labels_list, label]
     }
-    return list
+    return { list, labels: labels_list }
 }

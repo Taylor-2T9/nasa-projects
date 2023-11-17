@@ -7,10 +7,9 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<any>
 ) {
-    const resp = await axios.get(`https://osdr.nasa.gov/genelab/data/glds/files/1,2,3?api_key=${process.env.API_KEY}`)
 
-    const data_list = convertObjectToArray(resp.data.studies)
-    const data = data_list
+    const resp = await axios.get(`https://osdr.nasa.gov/genelab/data/glds/files/${req.query.page}?api_key=${process.env.API_KEY}`)
+    const data = convertObjectToArray(resp.data.studies)
 
     res.status(200).json(data)
 }

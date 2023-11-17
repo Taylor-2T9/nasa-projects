@@ -29,7 +29,7 @@ const projects = [
         name: "NASA GeneLab",
         subtitle: "Access to GeneLab database",
         route: "/genelab",
-        base_url: "https://api.nasa.gov/planetary/genelab",
+        base_url: "https://osdr.nasa.gov/",
         logo: genelab.src
     }
 ]
