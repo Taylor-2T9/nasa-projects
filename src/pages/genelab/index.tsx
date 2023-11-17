@@ -150,7 +150,13 @@ export default function Genelab() {
                                                 .toLocaleDateString()
                                         }</td>
                                         <td>
-                                            <a href={projects[3].base_url + item.remote_url} onClick={() => console.log(item)}>Export</a>
+                                            <a
+                                                href={projects[3].base_url + item.remote_url}
+                                                target="_blank"
+                                                onClick={() => console.log(item)}
+                                            >
+                                                Export
+                                            </a>
                                         </td>
                                     </S.Row>
                                 ))}
