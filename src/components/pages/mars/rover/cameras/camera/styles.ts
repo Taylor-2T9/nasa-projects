@@ -10,11 +10,74 @@ padding-top: 34vh;
 background-color: #020202d9;
 color: whitesmoke;
 `
+export const SolForm = styled.form`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-top: 5px;
+@media (min-height: 700px) and (max-width: 500px){
+  margin-top: -20px;
+}
+span{
+    font-size: 12px;
+    margin: 10px;
+    margin-bottom: 2px;
+}
+label{
+  font-size: 13px;
+@media (min-height: 600px) and (max-width: 500px){
+  font-size: 11px;
+}
+}
+`
+export const SolInput = styled.input`
+width: 7.3vw;
+min-width: 187px;
+text-align: center;
+height: 22px;
+appearance: none;
+outline: none;
+background-color: #fff;
+border: 1px solid #ccc;
+border-radius: 4px;
+padding: 8px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+transition: box-shadow 0.3s ease;
+margin-top: 8px;
+font-size: 12px;
+@media (min-height: 600px) and (max-width: 500px){
+  min-width: 125px;
+}
+&:hover{
+  box-shadow: 0 0 8px rgba(6, 6, 6, 0.9);
+}
+`
+export const SolConfirm = styled.button`
+width: 6vw;
+min-width: 88px;
+height: 28px;
+background-color: #6c757d;
+color: #fff;
+border: none;
+border-radius: 4px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 7px;
+font-size: 13px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+&:hover {
+  background-color: #343a40;
+}
+`
 export const List = styled.div`
 display: flex;
 flex-wrap: wrap;
-padding: 2%;
 justify-content: center;
+@media (min-height: 600px) and (max-width: 500px){
+  margin-top: 11px;
+}
 `
 export const Item = styled.div`
 cursor: pointer;
