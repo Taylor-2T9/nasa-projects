@@ -1,11 +1,11 @@
-import { convertObjectToArray } from '@/utils/object'
+import { IImagesData } from '@/types/api/images'
 import axios from 'axios'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 
 export default async function handler(
     req: NextApiRequest,
-    res: NextApiResponse<any>
+    res: NextApiResponse<IImagesData>
 ) {
     const { page, terms } = req.query
 

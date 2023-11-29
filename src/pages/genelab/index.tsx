@@ -153,7 +153,6 @@ export default function Genelab() {
                                             <a
                                                 href={projects[3].base_url + item.remote_url}
                                                 target="_blank"
-                                                onClick={() => console.log(item)}
                                             >
                                                 Export
                                             </a>

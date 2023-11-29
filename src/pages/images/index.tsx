@@ -4,10 +4,11 @@ import * as S from '../../components/pages/images/styles'
 import { useEffect, useState, useMemo, useRef } from 'react'
 import axios from 'axios'
 import Loading from '@/components/Loading'
+import { IImagesData, IItemData } from '@/types/api/images'
 
 export default function Apod() {
     const [page, setPage] = useState(1)
-    const [data, setData] = useState([] as any[])
+    const [data, setData] = useState([] as IItemData[])
     const [show, setShow] = useState<number>(-1)
     const [loading, setLoading] = useState(false)
 
@@ -65,7 +66,7 @@ export default function Apod() {
             `/api/images?page=${page}&terms=${searchInputRef.current?.value}`
         ).then(res => {
             setData(state => {
-                return [...state, ...res.data.items] as any[]
+                return [...state, ...res.data.items]
             })
             setLoading(false)
         })
@@ -73,7 +74,7 @@ export default function Apod() {
     return (
         <>
             <Head>
-                <title>Astro Picture of the Day</title>
+                <title>NASA Image and Video Library</title>
             </Head>
             <Navbar title="NASA Image and Video Library" />
             <S.Container>
