@@ -18,6 +18,7 @@
 > The APIs that have already been implemented are:
 - APOD
 - Mars Rovers
+- Genelab
 
 ---
 
