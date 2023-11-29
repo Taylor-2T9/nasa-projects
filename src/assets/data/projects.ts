@@ -14,7 +14,7 @@ const projects = [
     {
         name: "NASA Image and Video Library",
         subtitle: "Images from NASA Database",
-        base_url: "https://images.nasa.gov/",
+        base_url: "https://images-api.nasa.gov/",
         route: "/images",
         logo: nasa_images.src
     },

@@ -10,7 +10,6 @@ import { useEffect, useMemo, useRef, useState } from "react"
 
 export default function Rover() {
     const router = useRouter()
-    const linkRef = useRef<HTMLAnchorElement>(null)
     const [rover, setRover] = useState({} as IRoverData)
     const roverLogo = useMemo(() => {
         if (router.query.rover)
