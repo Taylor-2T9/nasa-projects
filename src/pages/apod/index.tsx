@@ -7,6 +7,7 @@ import axios from 'axios'
 import MediaRenderer from '@/components/pages/apod/MediaRenderer'
 import Loading from '@/components/Loading'
 import Modal from '@/components/Modal'
+import Footer from '@/components/Footer'
 
 export default function Apod() {
     const [picture, setPicture] = useState({} as IPictureData)
@@ -90,6 +91,7 @@ export default function Apod() {
                     }
                 />
             </S.Container>
+            <Footer />
         </>
     )
 }

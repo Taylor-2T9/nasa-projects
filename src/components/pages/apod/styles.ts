@@ -5,7 +5,8 @@ background-color: #020202d9;
 display: flex;
 flex-wrap: wrap;
 min-height: 80vh;
-padding-top: 20vh;  
+padding-top: 20vh;
+padding-bottom: 2vh;  
 @media (min-width: 1175px){
     padding-top: 22vh;  
     min-height: 0;

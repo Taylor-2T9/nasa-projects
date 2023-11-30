@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer"
 import Loading from "@/components/Loading"
 import Navbar from "@/components/Navbar"
 import * as S from "@/components/pages/mars/rover/cameras/camera/styles"
@@ -97,6 +98,7 @@ export default function Mars() {
                     )}
                 </S.List> : <Loading />}
             </S.Container>
+            <Footer />
         </>
     )
 }

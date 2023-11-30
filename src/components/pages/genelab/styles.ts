@@ -28,10 +28,10 @@ padding-top: 20vh;
 `
 export const TableWrapper = styled.div`
 margin-top: 5.4%;
-width: 99.5%;
+width: 99.7%;
 margin-left: auto;
 margin-right: auto;
-height: 84%;
+height: 84.2%;
 overflow-y: scroll;
 overflow-x: auto;
 p{
@@ -43,7 +43,8 @@ table {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    border-spacing: 0
+    border-spacing: 0;
+    margin-bottom: 3%;
 }
 thead{
     position: sticky;

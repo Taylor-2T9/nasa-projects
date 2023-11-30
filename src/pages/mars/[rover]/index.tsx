@@ -1,4 +1,5 @@
 import rovers_list from "@/assets/data/rovers"
+import Footer from "@/components/Footer"
 import Loading from "@/components/Loading"
 import Navbar from "@/components/Navbar"
 import * as S from "@/components/pages/mars/rover/styles"
@@ -53,6 +54,7 @@ export default function Rover() {
                     : <Loading />
                 }
             </S.Container>
+            <Footer />
         </>
     )
 }

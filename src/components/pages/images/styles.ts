@@ -89,6 +89,7 @@ flex-wrap: wrap;
 width: 90%;
 padding: 5%;
 padding-top: 1.2%;
+padding-bottom: 0.5%;
 @media (min-width: 900px){
     padding-top: 0%;
 }
@@ -130,11 +131,15 @@ export const Preview = styled.div<{ show: boolean }>`
 display: ${(props) => (props.show ? 'block' : 'none')};
 color: whitesmoke;
 position: relative;
-top: -101%;
+top: -101.7%;
 padding: 10px;
 h3{
     font-weight: 500;
 }
 height: 90%;
 background-color: rgba(0, 0, 0, 0.65);
+`
+export const LoadMoreArea = styled.div`
+color: whitesmoke;
+margin: 2%;
 `

@@ -5,6 +5,7 @@ import { MutableRefObject, useEffect, useMemo, useRef, useState } from 'react'
 import axios from 'axios'
 import Loading from '@/components/Loading'
 import projects from '@/assets/data/projects'
+import Footer from '@/components/Footer'
 
 
 export default function Genelab() {
@@ -144,11 +145,13 @@ export default function Genelab() {
                                         <td>{item.category}</td>
                                         <td>{item.file_name}</td>
                                         <td>{item.organization}</td>
-                                        <td>{
-                                            new Date(item.date_updated ?
-                                                item.date_updated : item.date_created)
-                                                .toLocaleDateString()
-                                        }</td>
+                                        <td>
+                                            {
+                                                new Date(item.date_updated ?
+                                                    item.date_updated : item.date_created)
+                                                    .toLocaleDateString()
+                                            }
+                                        </td>
                                         <td>
                                             <a
                                                 href={projects[3].base_url + item.remote_url}
@@ -169,8 +172,8 @@ export default function Genelab() {
                             </tfoot>
                         </table>
                     </> : <Loading />}
+                <Footer />
                 </S.TableWrapper>
-                {/* <Loading /> */}
             </S.Container >
         </>
     )

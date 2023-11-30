@@ -5,6 +5,7 @@ import { useEffect, useState, useMemo, useRef } from 'react'
 import axios from 'axios'
 import Loading from '@/components/Loading'
 import { IImagesData, IItemData } from '@/types/api/images'
+import Footer from '@/components/Footer'
 
 export default function Apod() {
     const [page, setPage] = useState(1)
@@ -123,15 +124,16 @@ export default function Apod() {
                         {
                             searchInputRef.current?.value ?
                                 (
-                                    <div ref={loadMoreRef}>
+                                    <S.LoadMoreArea ref={loadMoreRef}>
                                         Loading more...
-                                    </div>
+                                    </S.LoadMoreArea>
                                 )
                                 : null
                         }
                     </>
                     : <Loading />
                 }
+                <Footer />
             </S.Container>
         </>
     )

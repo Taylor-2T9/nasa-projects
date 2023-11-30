@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar"
 import * as S from "@/components/pages/mars/styles"
 import rovers_list from "@/assets/data/rovers"
 import Head from "next/head"
+import Footer from "@/components/Footer"
 
 export default function Mars() {
     return (
@@ -18,6 +19,7 @@ export default function Mars() {
                     ))
                 }
             </S.Container>
+            <Footer />
         </>
     )
 }

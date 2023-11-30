@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar'
 import Card from '@/components/Card'
 import projects from '@/assets/data/projects'
 import * as S from '../components/pages/styles'
+import Footer from '@/components/Footer'
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
             <Card type="project" item={item} key={index} />
           ))}
         </S.Explorer>
+        <Footer />
       </S.Container>
     </>
   )

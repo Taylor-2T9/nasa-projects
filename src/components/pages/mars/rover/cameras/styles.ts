@@ -7,6 +7,7 @@ export const Container = styled.div`
 width: 100%;
 min-height: 80vh;
 padding-top: 35vh;
+padding-bottom: 2.2vh;
 background-color: #020202d9;
 color: whitesmoke;
 `

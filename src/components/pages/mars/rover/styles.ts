@@ -5,11 +5,15 @@ import _Link from "next/link"
 
 export const Container = styled.div`
 padding-top: 20vh;
+padding-bottom: 3vh;
 width: 100%;
 min-height: 80vh;
 background-color: #020202d9;
 color: whitesmoke;
 @media (min-height: 600px) and (max-width: 500px) {
+    padding-top: 10vh;
+}
+@media (min-height: 700px) and (max-width: 500px) {
     padding-top: 30vh;
 }
 `
