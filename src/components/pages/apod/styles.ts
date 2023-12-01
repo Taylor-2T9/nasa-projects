@@ -121,10 +121,10 @@ display: flex;
 color: white;
 justify-content: center;
 align-items: center;
-width: 50%;
-height: 100%;
 image-rendering: optimizeQuality;
-@media (min-width: 1100px) {
+@media (min-width: 900px) {
+    width: 50%;
+    height: 100%;
     margin-top: 5vh;
 }
 img, embed{

@@ -145,6 +145,7 @@ text-align: center;
 margin: 0;
 padding-top: 1.7%;
 text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
+user-select: none;
 @media (min-height: 600px) and (max-width: 500px) {
   padding-top: ${props => props.variant === 'top' ? '6%' : '12%'};
   font-size: 28px;

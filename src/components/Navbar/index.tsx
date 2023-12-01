@@ -10,9 +10,11 @@ import { IPictureData } from "@/types/api/apod"
 
 const Navbar: NextPage<INavProps> = ({ setPicture, setCamImages, title, rover_max_sol }) => {
     const router = useRouter()
+
     const linkRef = useRef<HTMLAnchorElement>(null)
     const dateRef = useRef<HTMLInputElement>(null)
-    const solRef = useRef<HTMLInputElement>(null)
+
+    const currentDate = new Date().toISOString().split('T')[0]
 
     const header_background = useMemo(() => {
         const path_without_bar = router.asPath.substring(1)
@@ -74,7 +76,12 @@ const Navbar: NextPage<INavProps> = ({ setPicture, setCamImages, title, rover_ma
                     {
                         router.route.includes("/apod") ?
                             <S.DateForm onSubmit={apodSubmit}>
-                                <S.DateInput type="date" ref={dateRef} required />
+                                <S.DateInput
+                                    type="date"
+                                    ref={dateRef}
+                                    max={currentDate}
+                                    required
+                                />
                                 <S.ConfirmButton>Choose a date</S.ConfirmButton>
                             </S.DateForm>
                             :
